@@ -1,6 +1,17 @@
+import { LogoHeader } from "./Headers/LogoHeader"
+import { ThemeProvider } from 'styled-components'
+
+import { defaultTheme } from "./styles/themes/default"
+import { GlobalStyle } from "./styles/themes/global"
+
+
 function App() {
   return (
-    <h1>Starting...</h1>
+    <ThemeProvider theme={defaultTheme}>
+      <LogoHeader />
+
+      <GlobalStyle />
+    </ThemeProvider>
   )
 }
 
