@@ -2,7 +2,7 @@ import { Coffee, Package, ShoppingCartSimple, Timer } from 'phosphor-react'
 import styled from 'styled-components'
 
 export const SummaryHeaderContainer = styled.main` 
-  display: flex; /* Define layout de grid */
+  display: flex;
   grid-template-columns: 1fr 1fr;  
   justify-content: space-between;
   gap: 3.5rem; 

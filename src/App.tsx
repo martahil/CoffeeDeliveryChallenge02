@@ -4,12 +4,14 @@ import { SummaryHeader } from "./Headers/SummaryHeader"
 
 import { defaultTheme } from "./styles/themes/default"
 import { GlobalStyle } from "./styles/themes/global"
+import { CoffeeList } from "./CoffeesMainPage/CoffeeList/Index"
 
 function App() {
   return (
     <ThemeProvider theme={defaultTheme}>
       <LogoHeader />
       <SummaryHeader />
+      <CoffeeList />
 
       <GlobalStyle />
     </ThemeProvider>
