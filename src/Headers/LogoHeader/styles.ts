@@ -6,7 +6,6 @@ export const LogoHeaderContainer = styled.main`
   display: grid;
   grid-template-columns: 1fr auto;
   padding: 2rem 10rem 2rem 10rem;  
-
   gap: 1rem;
 `
 
