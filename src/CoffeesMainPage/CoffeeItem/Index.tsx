@@ -1,20 +1,40 @@
-import { CoffeeItemContainer, Image, Description, Name, Tag, Price, DollarSign, PriceNumber, QuantitySelector, PlusButton, MinusButton, PriceAndQuantity, ShoppingCartSimpleIcon, CartWrapper } from "./styles";
-import traditionalEspresso from "../../assets/coffee-images/traditional-espresso.svg"
+import { CoffeeItemContainer, Image, Description, Name, Tag, Price, DollarSign, PriceNumber, QuantitySelector, PlusButton, MinusButton, PriceAndQuantity, ShoppingCartSimpleIcon, CartWrapper, TagWrapper } from "./styles";
 
-export function CoffeeItem() {
+interface CoffeeItemProps {
+  imageSrc: string;
+  imageAlt: string;
+  tag: string[];
+  name: string;
+  description: string;
+  price: number;
+  quantity: number;
+  //onQuantityChange: (newQuantity: number) => void;
+}
+
+export function CoffeeItem({
+  imageSrc,
+  imageAlt,
+  tag,
+  name,
+  description,
+  price,
+  quantity, }: CoffeeItemProps) {
+
   return (
     <CoffeeItemContainer>
       <Image>
-        <img src={traditionalEspresso} alt="Traditional Espresso" />
+        <img src={imageSrc} alt={imageAlt} />
       </Image>
-      <Tag>
-        <p>TRADITIONAL</p>
-      </Tag>
+      <TagWrapper>
+        {tag.map((t, index) => (
+          <Tag key={index}>{t}</Tag>
+        ))}
+      </TagWrapper>
       <Name>
-        <p>Traditional Espresso</p>
+        <p>{name}</p>
       </Name>
       <Description>
-        <p>The classic coffee made with<br></br> hot water and ground beans</p>
+        <p>{description}</p>
       </Description>
       <PriceAndQuantity>
         <Price>
@@ -22,12 +42,12 @@ export function CoffeeItem() {
             $&nbsp;
           </DollarSign>
           <PriceNumber>
-            9.90
+            {price}
           </PriceNumber>
         </Price>
         <QuantitySelector>
           <MinusButton>-</MinusButton>
-          <input type="number" value="1" />
+          <input type="number" value={quantity} />
           <PlusButton>+</PlusButton>
         </QuantitySelector>
         <CartWrapper><ShoppingCartSimpleIcon size={22} /></CartWrapper>
@@ -35,3 +55,5 @@ export function CoffeeItem() {
     </CoffeeItemContainer>
   )
 }
+
+

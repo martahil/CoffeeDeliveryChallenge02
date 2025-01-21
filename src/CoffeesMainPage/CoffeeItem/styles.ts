@@ -12,15 +12,12 @@ export const CoffeeItemContainer = styled.div`
 `
 
 export const Image = styled.div`
-  /* width: 7.5rem;
-  height: 7.5rem; */
   display: flex;
-  align-items: center;      /* Centraliza verticalmente */
+  align-items: center;      
   margin-top: -15px;
 `
 
 export const Tag = styled.div`
-  display: inline-block;
   color: ${props => props.theme.colors['yellow-dark']};
   background: ${props => props.theme.colors['yellow-light']};
   border-radius: 100px;
@@ -29,12 +26,15 @@ export const Tag = styled.div`
   font-size: 0.625rem;
   font-weight: bold;
   margin-top: 0.75rem;
-  margin-left: 7.2916rem;
-  margin-right: 7.2916rem;
 `
+export const TagWrapper = styled.div`
+  display: flex;
+  flex-direction: row; 
+  gap: 0.25rem;
+`
+
 export const Name = styled.div`
   color: ${props => props.theme.colors['base-subtitle']};
-  //padding: 0.25rem 0.5rem;
   font-family: 'Baloo 2';
   font-size: 1.25rem;
   font-weight: bold;
@@ -42,9 +42,9 @@ export const Name = styled.div`
   margin-left: 1.25rem;
   margin-right: 1.25rem;
 `
+
 export const Description = styled.div`
   color: ${props => props.theme.colors['base-label']};
-  /*padding: 0.25rem 0.5rem;*/
   font-family: 'Roboto', sans-serif;
   font-size: 0.875rem; /* S */
   font-weight: 400; /* Regular */
@@ -72,7 +72,6 @@ export const Price = styled.div`
 
 export const DollarSign = styled.span`
   color: ${props => props.theme.colors['base-text']};
-  /*padding: 0.25rem 0.5rem;*/
   font-family: 'Roboto', sans-serif;
   font-size: 1rem;
   font-weight: 400; /* Regular */
@@ -80,7 +79,6 @@ export const DollarSign = styled.span`
 
 export const PriceNumber = styled.span`
   color: ${props => props.theme.colors['base-text']};
-  /*padding: 0.25rem 0.5rem;*/
   font-family: 'Baloo 2';
   font-size: 1.5rem;
   font-weight: bolder; /* ExtraBold */
@@ -103,9 +101,8 @@ export const QuantitySelector = styled.div`
     border: none;
     padding: 0.1875rem 0.4375rem;
     display: flex;
-    /* display: inline-block; */
-    text-align: center; /* Alinha horizontalmente */
-    line-height: normal; /* Garante alinhamento vertical correto */
+    text-align: center; 
+    line-height: normal; 
     width: 1.5rem;
   }
 
@@ -130,7 +127,6 @@ export const QuantitySelector = styled.div`
     background: none;
     border: none;
   }
-
 `
 
 export const MinusButton = styled.button`
