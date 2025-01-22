@@ -37,7 +37,7 @@ export const Name = styled.div`
   color: ${props => props.theme.colors['base-subtitle']};
   font-family: 'Baloo 2';
   font-size: 1.25rem;
-  font-weight: bold;
+  /* font-weight: bold; */
   margin-top: 1rem;
   margin-left: 1.25rem;
   margin-right: 1.25rem;

@@ -19,6 +19,7 @@ export function CoffeeItem({
   description,
   price,
   quantity, }: CoffeeItemProps) {
+  const isHawaiian = name === "Hawaiian";
 
   return (
     <CoffeeItemContainer>
@@ -30,7 +31,12 @@ export function CoffeeItem({
           <Tag key={index}>{t}</Tag>
         ))}
       </TagWrapper>
-      <Name>
+      <Name style={{ 
+          fontFamily: isHawaiian ? "Bahiana" : "Baloo 2",
+          fontWeight: isHawaiian ? 400 : "bold",
+        }}
+      >
+      {/* font-weight: 400; /* Regular */ }
         <p>{name}</p>
       </Name>
       <Description>
@@ -51,7 +57,7 @@ export function CoffeeItem({
           <PlusButton>+</PlusButton>
         </QuantitySelector>
         <CartWrapper><ShoppingCartSimpleIcon size={22} /></CartWrapper>
-      </PriceAndQuantity>
+      </PriceAndQuantity>      
     </CoffeeItemContainer>
   )
 }
