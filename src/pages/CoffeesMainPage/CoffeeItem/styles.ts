@@ -126,15 +126,20 @@ export const QuantitySelector = styled.div`
     color: ${props => props.theme.colors['purple']};
     background: none;
     border: none;
+    cursor: pointer;
   }
 `
 
 export const MinusButton = styled.button`
-
+   &:hover {
+    color: ${props => props.theme.colors['purple-dark']};
+  }
 `
 
 export const PlusButton = styled.button`
-
+  &:hover {
+    color: ${props => props.theme.colors['purple-dark']};
+  }
 `
 
 export const ShoppingCartSimpleIcon = styled(ShoppingCartSimple)`
@@ -150,4 +155,5 @@ export const CartWrapper = styled.button`
   border-radius: 6px;
   border: none;
   margin-left: 0.5rem;
+  cursor: pointer;
 `

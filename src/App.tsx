@@ -11,10 +11,10 @@ function App() {
   return (
     <ThemeProvider theme={defaultTheme}>
       <LogoHeader />
-      {/* <SummaryHeader /> */}
-      {/* <CoffeeList /> */}
+      <SummaryHeader /> 
+      <CoffeeList />
 
-      <Checkout />
+      {/* <Checkout /> */}
 
       <GlobalStyle />
     </ThemeProvider>

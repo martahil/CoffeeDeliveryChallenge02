@@ -198,12 +198,18 @@ export const PaymentOptions = styled.div`
     border-radius: 6px;
     padding: 1rem;
     cursor: pointer;
+
+    &:hover {
+      background: ${props => props.theme.colors['base-hover']};
+    }
   }
 
   button:focus {
   border: solid 1px ${props => props.theme.colors['purple-dark']};
   background: ${props => props.theme.colors['purple-light']}; 
   }
+
+  
 `
 
 export const CreditCardBtn = styled.button` 
@@ -346,12 +352,16 @@ export const Total = styled.div`
 
 export const CheckoutBtn = styled.button`
   color: ${props => props.theme.colors['white']};
-  background: ${props => props.theme.colors['yellow-dark']};
+  background: ${props => props.theme.colors['yellow']};
   padding: 0.75rem 0.5rem;
   border: none;
   cursor: pointer;
   width: 100%;
   border-radius: 6px;
+
+  &:hover {
+    background: ${props => props.theme.colors['yellow-dark']};
+  }
 `
 
 
