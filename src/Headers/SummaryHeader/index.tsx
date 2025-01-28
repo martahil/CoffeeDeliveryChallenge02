@@ -1,5 +1,5 @@
 import { CartWrapper, CoffeeIcon, CoffeeImg, CoffeeItem, CoffeeWrapper, FeaturesSection, HighlightsSection, PackageIcon, PackageItem, PackageWrapper, ShoppingCartItem, ShoppingCartSimpleIcon, Subtitle, SummaryHeaderContainer, TimerIcon, TimerItem, TimerWrapper, Title, TitleAndSubtitle } from "./styles";
-import coffee from '../../assets/Coffee.svg'
+import coffee from '../../assets/coffee.svg'
 
 export function SummaryHeader() {
   return (

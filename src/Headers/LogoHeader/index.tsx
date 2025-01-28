@@ -1,5 +1,5 @@
 import { LeftLogo, LogoHeaderContainer, Location, City, ShoppingCartSimpleIcon, CartWrapper, CartCounter } from './styles'
-import logo from '../../assets/Logo.svg'
+import logo from '../../assets/logo.svg'
 import { MapPin } from 'phosphor-react'
 
 export function LogoHeader() {
