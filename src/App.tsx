@@ -6,15 +6,18 @@ import { defaultTheme } from "./styles/themes/default"
 import { GlobalStyle } from "./styles/themes/global"
 import { CoffeeList } from "./pages/CoffeesMainPage/CoffeeList/Index"
 import { Checkout } from "./pages/CheckoutPage/Index"
+import { OrderConfirmed } from "./pages/OrderConfirmedPage/Index"
 
 function App() {
   return (
     <ThemeProvider theme={defaultTheme}>
       <LogoHeader />
-      <SummaryHeader /> 
-      <CoffeeList />
+      {/* <SummaryHeader /> 
+      <CoffeeList /> */}      
 
       {/* <Checkout /> */}
+
+      <OrderConfirmed />
 
       <GlobalStyle />
     </ThemeProvider>
