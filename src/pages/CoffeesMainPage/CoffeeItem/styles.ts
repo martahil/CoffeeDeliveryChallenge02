@@ -9,6 +9,7 @@ export const CoffeeItemContainer = styled.div`
  align-items: center;
  flex-direction: column;
  border-radius: 10px 30px 50px 30px;
+ margin-bottom: 1.25rem;
 `
 
 export const Image = styled.div`
@@ -92,7 +93,7 @@ export const QuantitySelector = styled.div`
   margin-left:0.5rem;
   border-radius: 6px;
 
-  input {
+  span {
     font-family: 'Roboto', sans-serif;
     font-size: 1rem;
     font-weight: 400; /* Regular */
@@ -103,22 +104,23 @@ export const QuantitySelector = styled.div`
     display: flex;
     text-align: center; 
     line-height: normal; 
-    width: 1.5rem;
+    /* width: 1.5rem; */
   }
 
-  input[type="number"]::-webkit-inner-spin-button, input[type="number"]::-webkit-outer-spin-button {
+  /* input[type="number"]::-webkit-inner-spin-button, input[type="number"]::-webkit-outer-spin-button {
     -webkit-appearance: none;
     margin: 0;
-  }
-
-  input[type="number"] {
-    -moz-appearance: textfield; /* Firefox */
+  } */
+  
+  /* Firefox: */
+  /* input[type="number"] {
+    -moz-appearance: textfield;
     appearance: textfield;
-  }
+  } */
 
-  input:focus {
+  /* input:focus {
     outline: none;
-  }
+  } */
 
   button {
     width: 0.875rem;

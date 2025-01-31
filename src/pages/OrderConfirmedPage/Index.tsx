@@ -1,4 +1,4 @@
-import { AddressContent, AddressSection, CityAndStateLine, CityLine, DeliveryContent, DeliveryEstimateTime, DeliveryEstimateTxt, DeliverySection, DeliveryToTxt, DollarIcon, DollarWrapper, LeftSide, MapPinIcon, MapPinWrapper, OrderConfirmedContainer, OrderMainInfo, OrderMainInfoContainer, PaymentContent, PaymentOnDeliveryTxt, PaymentOption, PaymentSection, RightSide, Street, StreetAddressLine, Subtitle, TimerIcon, TimerWrapper, Title } from "./styles";
+import { AddressContent, AddressSection, CityAndStateLine, DeliveryContent, DeliveryEstimateTime, DeliveryEstimateTxt, DeliverySection, DeliveryToTxt, DollarIcon, DollarWrapper, LeftSide, MapPinIcon, MapPinWrapper, OrderConfirmedContainer, OrderMainInfo, OrderMainInfoContainer, PaymentContent, PaymentOnDeliveryTxt, PaymentOption, PaymentSection, RightSide, Street, StreetAddressLine, Subtitle, TimerIcon, TimerWrapper, Title } from "./styles";
 import orderConfirmedImg from '../../assets/order-confirmed-illustration.svg'
 
 export function OrderConfirmed() {

@@ -1,11 +1,13 @@
-import { AddressForm, AddressSubtitle, AddressTitle, AddressContainer, CashBtn, CheckoutContainer, CreditCardBtn, DebitCardBtn, LeftSide, LeftSideHeader, PaymentContainer, PaymentContainerSubtitle, PaymentContainerTitle, PaymentOptions, FirstInputLine, SecondInputLine, ThirdInputLine, FourthInputLine, MapPinIcon, AddressContainerHeader, MapPinWrapper, TitleAndSubtitle, PaymentTitleAndSubtitle, PaymentContainerHeader, AddressTitleAndSubtitle, DollarIcon, CreditCardIcon, BankIcon, MoneyIcon, Optional, AddressLine2, T1, T2, AddressLineContainer, AddressLineInput, PlaceholderContainer, AddressLineSpan, OptionalSpan, AddressLine2Container, AddressLine2Input, AddressLine2Span, AddressLine2Placeholder, RightSide, RightSideHeader, RemoveButton, CoffeeImage, Subtotal, Shipping, Total, CheckoutBtn, Name, TrashIcon, DollarSign, Price, PriceNumber, TotalContainer, NameAndPrice, QuantSelAndRemoveBtn, CartItems, NameAndButtons, RightSideContent, GrayLine } from "./styles";
-import { QuantitySelector, MinusButton, PlusButton } from "../CoffeesMainPage/CoffeeItem/styles";
-import traditionalEspresso from '../../assets/coffee-images/traditional-espresso.svg'
-import latte from '../../assets/coffee-images/latte.svg'
-
+import React from 'react';
 import { useState } from "react";
 
+import { AddressForm, AddressSubtitle, AddressTitle, AddressContainer, CashBtn, CheckoutContainer, CreditCardBtn, DebitCardBtn, LeftSide, LeftSideHeader, PaymentContainer, PaymentContainerSubtitle, PaymentContainerTitle, PaymentOptions, FirstInputLine, SecondInputLine, ThirdInputLine, FourthInputLine, MapPinIcon, AddressContainerHeader, MapPinWrapper, TitleAndSubtitle, PaymentTitleAndSubtitle, PaymentContainerHeader, AddressTitleAndSubtitle, DollarIcon, CreditCardIcon, BankIcon, MoneyIcon, Optional, AddressLine2, T1, T2, AddressLineContainer, AddressLineInput, PlaceholderContainer, AddressLineSpan, OptionalSpan, AddressLine2Container, AddressLine2Input, AddressLine2Span, AddressLine2Placeholder, RightSide, RightSideHeader, RemoveButton, CoffeeImage, Subtotal, Shipping, Total, CheckoutBtn, Name, TrashIcon, DollarSign, Price, PriceNumber, TotalContainer, NameAndPrice, QuantSelAndRemoveBtn, CartItems, NameAndButtons, RightSideContent, GrayLine } from "./styles";
+import { QuantitySelector, MinusButton, PlusButton } from "../CoffeesMainPage/CoffeeItem/styles";
+
+import { useCart } from "../../../src/contexts/CartContext";
+
 export function Checkout() {
+  const { cart, removeFromCart } = useCart();
 
   const [inputValue, setInputValue] = useState("");
   const handleChange = (e) => {
@@ -100,15 +102,48 @@ export function Checkout() {
         </RightSideHeader>
 
         <RightSideContent>
-          <CartItems>
-            <CoffeeImage src={traditionalEspresso} alt="Traditional Espresso" />
 
+          {cart.length === 0 ? (
+            <p>O carrinho está vazio.</p>
+          ) : (
+            cart.map((item) => (
+              <React.Fragment key={item.id}>
+                <CartItems>
+                  <CoffeeImage src={item.imageSrc} alt={item.imageAlt} />
+                  <NameAndButtons>
+                    <Name>{item.name}</Name>
+                    <QuantSelAndRemoveBtn>
+                      <QuantitySelector style={{ margin: '0' }}>
+                        <MinusButton>-</MinusButton>
+                        {/*<input type="number"*/} {/*value={quantity}*/} {/*value={1} />*/}
+                        <span>{item.quantity}</span>
+                        <PlusButton>+</PlusButton>
+                      </QuantitySelector>
+                      <RemoveButton onClick={() => removeFromCart(item.id)}>
+                        <TrashIcon size={16} />
+                        REMOVE</RemoveButton>
+                    </QuantSelAndRemoveBtn>
+                  </NameAndButtons>
+                  <Price>
+                    <PriceNumber>
+                      $&nbsp;9.90
+                    </PriceNumber>
+                  </Price>
+                </CartItems>
+                <GrayLine></GrayLine>
+
+              </React.Fragment>
+            ))
+          )}
+
+          {/*<CartItems>
+            <CoffeeImage src={traditionalEspresso} alt="Traditional Espresso" />
             <NameAndButtons>
               <Name>Traditional Espresso</Name>
               <QuantSelAndRemoveBtn>
                 <QuantitySelector style={{ margin: '0' }}>
-                  <MinusButton>-</MinusButton>
-                  <input type="number" /*value={quantity}*/ value={1} />
+                  <MinusButton>-</MinusButton> 
+                  <input type="number"*/} {/*value={quantity}*/} {/*value={1} />
                   <PlusButton>+</PlusButton>
                 </QuantitySelector>
                 <RemoveButton>
@@ -116,25 +151,22 @@ export function Checkout() {
                   REMOVE</RemoveButton>
               </QuantSelAndRemoveBtn>
             </NameAndButtons>
-
             <Price>
               <PriceNumber>
                 $&nbsp;9.90
               </PriceNumber>
             </Price>
           </CartItems>
+          <GrayLine></GrayLine>*/}
 
-          <GrayLine></GrayLine>
-
-          <CartItems>
+          {/*<CartItems>
             <CoffeeImage src={latte} alt="Traditional Espresso" />
-
             <NameAndButtons>
               <Name>Latte</Name>
               <QuantSelAndRemoveBtn>
                 <QuantitySelector style={{ margin: '0' }}>
                   <MinusButton>-</MinusButton>
-                  <input type="number" /*value={quantity}*/ value={1} />
+                  <input type="number"*/} {/*value={quantity}*/} {/*value={1} />
                   <PlusButton>+</PlusButton>
                 </QuantitySelector>
                 <RemoveButton>
@@ -142,15 +174,13 @@ export function Checkout() {
                   REMOVE</RemoveButton>
               </QuantSelAndRemoveBtn>
             </NameAndButtons>
-
             <Price>
               <PriceNumber>
                 $&nbsp;19.80
               </PriceNumber>
             </Price>
-          </CartItems>
-
-          <GrayLine></GrayLine>
+          </CartItems>          
+          <GrayLine></GrayLine>*/}
 
           <TotalContainer>
             <Subtotal>
