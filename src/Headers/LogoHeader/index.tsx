@@ -14,11 +14,15 @@ export function LogoHeader() {
     navigate('/checkout');
   }
 
+  function handleMainPageLogoBtn() {
+    navigate('/');
+  }
+
   const totalItems = cart.reduce((acc, item) => acc + item.quantity, 0);
 
   return (
     <LogoHeaderContainer>
-      <LeftLogo>
+      <LeftLogo onClick={handleMainPageLogoBtn}>
         <img src={logo} alt="Logo" />
       </LeftLogo>
 

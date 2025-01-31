@@ -136,7 +136,7 @@ export function Checkout() {
           {cart.length === 0 ? (
             <EmptyCartMessage>
               <EmptyCartFirstP>Your cart is empty.</EmptyCartFirstP>
-              <EmptyCartSecondP>Click in the button to continue shopping.</EmptyCartSecondP>
+              <EmptyCartSecondP>Click on the button to continue shopping.</EmptyCartSecondP>
             </EmptyCartMessage>
           ) : (
             cart.map((item) => (

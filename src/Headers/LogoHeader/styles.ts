@@ -9,8 +9,11 @@ export const LogoHeaderContainer = styled.main`
   gap: 1rem;
 `
 
-export const LeftLogo = styled.div`  
+export const LeftLogo = styled.button`  
   justify-self: start;
+  border: none;
+  background: none;
+  cursor: pointer;
 
   img {
     width: 5.3rem;
