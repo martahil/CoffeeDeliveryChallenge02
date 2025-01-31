@@ -30,14 +30,15 @@ export const ShoppingCartSimpleIcon = styled(ShoppingCartSimple)`
   color: ${props => props.theme.colors['yellow-dark']};
 `
 
-export const CartWrapper = styled.div`
+export const CartWrapper = styled.button`
   display: inline-flex; 
   align-items: center;
   justify-content: center;
   background: ${props => props.theme.colors['yellow-light']};
   min-width: 2.375rem; 
   border-radius: 6px;
-  
+  border: none;
+  cursor: pointer;
 `
 
 export const City = styled.div`  

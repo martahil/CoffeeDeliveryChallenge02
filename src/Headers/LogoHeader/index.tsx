@@ -2,7 +2,20 @@ import { LeftLogo, LogoHeaderContainer, Location, City, ShoppingCartSimpleIcon, 
 import logo from '../../assets/logo.svg'
 import { MapPin } from 'phosphor-react'
 
+import { useNavigate } from 'react-router-dom';
+import { useCart } from '../../contexts/CartContext'
+
+
 export function LogoHeader() {
+  const navigate = useNavigate();
+  const { cart } = useCart();
+
+  function handleCart() {
+    navigate('/checkout');
+  }
+
+  const totalItems = cart.reduce((acc, item) => acc + item.quantity, 0);
+
   return (
     <LogoHeaderContainer>
       <LeftLogo>
@@ -14,11 +27,11 @@ export function LogoHeader() {
           <MapPin size={22} />
           <h1>New York, NY</h1>
         </City>
-        <CartWrapper>
+        <CartWrapper onClick={handleCart}>
           <ShoppingCartSimpleIcon size={22} />
         </CartWrapper>
         <CartCounter>
-          <h1>3</h1>
+          <h1>{totalItems}</h1>
         </CartCounter>
       </Location>
 
