@@ -7,7 +7,25 @@ import { QuantitySelector, MinusButton, PlusButton } from "../CoffeesMainPage/Co
 import { useCart } from "../../../src/contexts/CartContext";
 
 export function Checkout() {
-  const { cart, removeFromCart } = useCart();
+  const { cart, removeFromCart, updateQuantity } = useCart();
+
+  const handleIncrease = (itemId: number) => {
+    const item = cart.find(item => item.id === itemId);
+    if (item) {
+      updateQuantity(itemId, item.quantity + 1);
+    }
+  }
+
+  const handleDecrease = (itemId: number) => {
+    const item = cart.find(item => item.id === itemId);
+    if (item && item.quantity > 1) {
+      updateQuantity(itemId, item.quantity - 1);
+    }
+  };
+
+  const subtotal = cart.reduce((acc, item) => acc + item.price * item.quantity, 0);
+  const shipping = 3.50;
+  const total = subtotal + shipping;
 
   const [inputValue, setInputValue] = useState("");
   const handleChange = (e) => {
@@ -114,10 +132,10 @@ export function Checkout() {
                     <Name>{item.name}</Name>
                     <QuantSelAndRemoveBtn>
                       <QuantitySelector style={{ margin: '0' }}>
-                        <MinusButton>-</MinusButton>
+                        <MinusButton onClick={() => handleDecrease(item.id)}>-</MinusButton>
                         {/*<input type="number"*/} {/*value={quantity}*/} {/*value={1} />*/}
                         <span>{item.quantity}</span>
-                        <PlusButton>+</PlusButton>
+                        <PlusButton onClick={() => handleIncrease(item.id)}>+</PlusButton>
                       </QuantitySelector>
                       <RemoveButton onClick={() => removeFromCart(item.id)}>
                         <TrashIcon size={16} />
@@ -126,7 +144,7 @@ export function Checkout() {
                   </NameAndButtons>
                   <Price>
                     <PriceNumber>
-                      $&nbsp;9.90
+                      $&nbsp;{item.price}
                     </PriceNumber>
                   </Price>
                 </CartItems>
@@ -182,26 +200,28 @@ export function Checkout() {
           </CartItems>          
           <GrayLine></GrayLine>*/}
 
-          <TotalContainer>
-            <Subtotal>
-              <p>Subtotal</p>
-              <PriceNumber>
-                $&nbsp;29.70
-              </PriceNumber>
-            </Subtotal>
-            <Shipping>
-              <p>Shipping</p>
-              <PriceNumber>
-                $&nbsp;3.50
-              </PriceNumber>
-            </Shipping>
-            <Total>
-              <p>Total</p>
-              <PriceNumber>
-                $&nbsp;33.20
-              </PriceNumber>
-            </Total>
-          </TotalContainer>
+          {cart.length > 0 && (
+            <TotalContainer>
+              <Subtotal>
+                <p>Subtotal</p>
+                <PriceNumber>
+                  $&nbsp;{subtotal.toFixed(2)}
+                </PriceNumber>
+              </Subtotal>
+              <Shipping>
+                <p>Shipping</p>
+                <PriceNumber>
+                  $&nbsp;{shipping.toFixed(2)}
+                </PriceNumber>
+              </Shipping>
+              <Total>
+                <p>Total</p>
+                <PriceNumber>
+                  $&nbsp;{total.toFixed(2)}
+                </PriceNumber>
+              </Total>
+            </TotalContainer>
+          )}
 
           <CheckoutBtn>CHECKOUT</CheckoutBtn>
         </RightSideContent>

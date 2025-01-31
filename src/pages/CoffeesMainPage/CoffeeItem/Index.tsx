@@ -3,6 +3,8 @@ import { CoffeeItemContainer, Image, Description, Name, Tag, Price, DollarSign, 
 import { useState } from "react";
 import { useCart } from "../../../../src/contexts/CartContext";
 
+import { handleQuantityChange } from "../../../contexts/CoffeeQuantityChange";
+
 interface CoffeeItemProps {
   id: number;
   imageSrc: string;
@@ -29,11 +31,11 @@ export function CoffeeItem({
   const { addToCart } = useCart();
 
   function increase() {
-    setQuantity((prev) => prev + 1);
+    handleQuantityChange('increase', quantity, setQuantity);
   }
 
   function decrease() {
-    setQuantity((prev) => (prev > 1 ? prev - 1 : 1));
+    handleQuantityChange('decrease', quantity, setQuantity);
   }
 
   function handleAddToCart() {
