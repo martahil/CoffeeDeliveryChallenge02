@@ -251,6 +251,23 @@ export const RightSideHeader = styled.div`
   margin-bottom: 0.9375rem;
 `
 
+export const EmptyCartMessage = styled.div`
+  font-family: 'Roboto', sans-serif;
+  font-size: 1rem;
+  font-weight: 400; /* Regular */
+  color: ${props => props.theme.colors['base-subtitle']};  
+`
+
+export const EmptyCartFirstP = styled.div`
+  margin-bottom: 0.125rem; 
+`
+
+export const EmptyCartSecondP = styled.div`
+  font-size: 0.875rem; /* S */
+  color: ${props => props.theme.colors['base-text']};
+  margin-bottom: 2rem;
+`
+
 export const CartItems = styled.div`
   display: flex;
   align-items: flex-start;

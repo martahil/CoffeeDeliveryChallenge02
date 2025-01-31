@@ -1,12 +1,24 @@
 import React from 'react';
 import { useState } from "react";
 
-import { AddressForm, AddressSubtitle, AddressTitle, AddressContainer, CashBtn, CheckoutContainer, CreditCardBtn, DebitCardBtn, LeftSide, LeftSideHeader, PaymentContainer, PaymentContainerSubtitle, PaymentContainerTitle, PaymentOptions, FirstInputLine, SecondInputLine, ThirdInputLine, FourthInputLine, MapPinIcon, AddressContainerHeader, MapPinWrapper, TitleAndSubtitle, PaymentTitleAndSubtitle, PaymentContainerHeader, AddressTitleAndSubtitle, DollarIcon, CreditCardIcon, BankIcon, MoneyIcon, Optional, AddressLine2, T1, T2, AddressLineContainer, AddressLineInput, PlaceholderContainer, AddressLineSpan, OptionalSpan, AddressLine2Container, AddressLine2Input, AddressLine2Span, AddressLine2Placeholder, RightSide, RightSideHeader, RemoveButton, CoffeeImage, Subtotal, Shipping, Total, CheckoutBtn, Name, TrashIcon, DollarSign, Price, PriceNumber, TotalContainer, NameAndPrice, QuantSelAndRemoveBtn, CartItems, NameAndButtons, RightSideContent, GrayLine } from "./styles";
+import { AddressForm, AddressSubtitle, AddressTitle, AddressContainer, CashBtn, CheckoutContainer, CreditCardBtn, DebitCardBtn, LeftSide, LeftSideHeader, PaymentContainer, PaymentContainerSubtitle, PaymentContainerTitle, PaymentOptions, FirstInputLine, SecondInputLine, ThirdInputLine, FourthInputLine, MapPinIcon, AddressContainerHeader, MapPinWrapper, TitleAndSubtitle, PaymentTitleAndSubtitle, PaymentContainerHeader, AddressTitleAndSubtitle, DollarIcon, CreditCardIcon, BankIcon, MoneyIcon, Optional, AddressLine2, T1, T2, AddressLineContainer, AddressLineInput, PlaceholderContainer, AddressLineSpan, OptionalSpan, AddressLine2Container, AddressLine2Input, AddressLine2Span, AddressLine2Placeholder, RightSide, RightSideHeader, RemoveButton, CoffeeImage, Subtotal, Shipping, Total, CheckoutBtn, Name, TrashIcon, DollarSign, Price, PriceNumber, TotalContainer, NameAndPrice, QuantSelAndRemoveBtn, CartItems, NameAndButtons, RightSideContent, GrayLine, EmptyCartMessage, EmptyCartSecondP, EmptyCartFirstP } from "./styles";
 import { QuantitySelector, MinusButton, PlusButton } from "../CoffeesMainPage/CoffeeItem/styles";
 
 import { useCart } from "../../../src/contexts/CartContext";
+import { useNavigate } from 'react-router-dom';
 
 export function Checkout() {
+  const navigate = useNavigate();
+
+  function handleCheckoutMainPageBtn() {
+    if (cart.length === 0) {
+      navigate('/');
+    }
+    if (cart.length >= 1) {
+      navigate('/orderconfirmed');
+    }
+  }
+
   const { cart, removeFromCart, updateQuantity } = useCart();
 
   const handleIncrease = (itemId: number) => {
@@ -122,7 +134,10 @@ export function Checkout() {
         <RightSideContent>
 
           {cart.length === 0 ? (
-            <p>O carrinho está vazio.</p>
+            <EmptyCartMessage>
+              <EmptyCartFirstP>Your cart is empty.</EmptyCartFirstP>
+              <EmptyCartSecondP>Click in the button to continue shopping.</EmptyCartSecondP>
+            </EmptyCartMessage>
           ) : (
             cart.map((item) => (
               <React.Fragment key={item.id}>
@@ -223,7 +238,9 @@ export function Checkout() {
             </TotalContainer>
           )}
 
-          <CheckoutBtn>CHECKOUT</CheckoutBtn>
+          <CheckoutBtn onClick={handleCheckoutMainPageBtn}>
+            {cart.length === 0 ? "MAIN PAGE" : "CHECKOUT"}
+          </CheckoutBtn>
         </RightSideContent>
       </RightSide>
     </CheckoutContainer>
