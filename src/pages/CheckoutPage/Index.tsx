@@ -1,22 +1,48 @@
 import React from 'react';
 import { useState } from "react";
+import { useCheckout } from '../../contexts/ClientDataContext';
 
-import { AddressForm, AddressSubtitle, AddressTitle, AddressContainer, CashBtn, CheckoutContainer, CreditCardBtn, DebitCardBtn, LeftSide, LeftSideHeader, PaymentContainer, PaymentContainerSubtitle, PaymentContainerTitle, PaymentOptions, FirstInputLine, SecondInputLine, ThirdInputLine, FourthInputLine, MapPinIcon, AddressContainerHeader, MapPinWrapper, TitleAndSubtitle, PaymentTitleAndSubtitle, PaymentContainerHeader, AddressTitleAndSubtitle, DollarIcon, CreditCardIcon, BankIcon, MoneyIcon, Optional, AddressLine2, T1, T2, AddressLineContainer, AddressLineInput, PlaceholderContainer, AddressLineSpan, OptionalSpan, AddressLine2Container, AddressLine2Input, AddressLine2Span, AddressLine2Placeholder, RightSide, RightSideHeader, RemoveButton, CoffeeImage, Subtotal, Shipping, Total, CheckoutBtn, Name, TrashIcon, DollarSign, Price, PriceNumber, TotalContainer, NameAndPrice, QuantSelAndRemoveBtn, CartItems, NameAndButtons, RightSideContent, GrayLine, EmptyCartMessage, EmptyCartSecondP, EmptyCartFirstP } from "./styles";
+import { AddressForm, AddressSubtitle, AddressTitle, AddressContainer, CashBtn, CheckoutContainer, CreditCardBtn, DebitCardBtn, LeftSide, LeftSideHeader, PaymentContainer, PaymentContainerSubtitle, PaymentContainerTitle, PaymentOptions, FirstInputLine, SecondInputLine, ThirdInputLine, FourthInputLine, MapPinIcon, AddressContainerHeader, PaymentTitleAndSubtitle, PaymentContainerHeader, AddressTitleAndSubtitle, DollarIcon, CreditCardIcon, BankIcon, MoneyIcon, OptionalSpan, AddressLine2Container, AddressLine2Input, AddressLine2Span, AddressLine2Placeholder, RightSide, RightSideHeader, RemoveButton, CoffeeImage, Subtotal, Shipping, Total, CheckoutBtn, Name, TrashIcon, Price, PriceNumber, TotalContainer, QuantSelAndRemoveBtn, CartItems, NameAndButtons, RightSideContent, GrayLine, EmptyCartMessage, EmptyCartSecondP, EmptyCartFirstP } from "./styles";
 import { QuantitySelector, MinusButton, PlusButton } from "../CoffeesMainPage/CoffeeItem/styles";
 
 import { useCart } from "../../../src/contexts/CartContext";
 import { useNavigate } from 'react-router-dom';
 
 export function Checkout() {
+  const { address, updateAddress } = useCheckout();
+
   const navigate = useNavigate();
 
+  const handleSubmit = (e) => {
+    e.preventDefault();
+  };
+
   function handleCheckoutMainPageBtn() {
+    const isAddressIncomplete = [
+      address.zipCode,
+      address.streetAddress,
+      address.houseNumber,
+      address.neighborhood,
+      address.city,
+      address.state
+    ].some(field => !field || field.trim() === '');
+
     if (cart.length === 0) {
       navigate('/');
+      return
     }
-    if (cart.length >= 1) {
-      navigate('/orderconfirmed');
+
+    if (isAddressIncomplete) {
+      alert('Please fill in all the required fields of the address form.');
+      return;
     }
+
+    if (!paymentMethod) {
+      alert('Please select a payment method.');
+      return;
+    }
+
+    navigate('/orderconfirmed', { state: { paymentMethod } });
   }
 
   const { cart, removeFromCart, updateQuantity } = useCart();
@@ -39,10 +65,7 @@ export function Checkout() {
   const shipping = 3.50;
   const total = subtotal + shipping;
 
-  const [inputValue, setInputValue] = useState("");
-  const handleChange = (e) => {
-    setInputValue(e.target.value);
-  }
+  const [paymentMethod, setPaymentMethod] = useState('');
 
   return (
     <CheckoutContainer>
@@ -63,35 +86,73 @@ export function Checkout() {
             </AddressTitleAndSubtitle>
           </AddressContainerHeader>
 
-          <AddressForm>
+          <AddressForm onSubmit={handleSubmit}>
             <FirstInputLine>
-              <input type="text" placeholder={'ZIP Code'} required />
+              <input
+                type="text"
+                placeholder={'ZIP Code'}
+                value={address.zipCode}
+                onChange={(e) => updateAddress({ zipCode: e.target.value })}
+                required />
             </FirstInputLine>
             <SecondInputLine>
-              <input type="text" placeholder={'Street Address'} required />
+              <input
+                type="text"
+                placeholder={'Street Address'}
+                value={address.streetAddress}
+                onChange={(e) => updateAddress({ streetAddress: e.target.value })}
+                required />
             </SecondInputLine>
             <ThirdInputLine>
-              <input type="text" placeholder={'House/Apartment Number'} required />
+              <input
+                type="text"
+                placeholder={'House/Apartment Number'}
+                value={address.houseNumber}
+                onChange={(e) => updateAddress({ houseNumber: e.target.value })}
+                required />
               {/* <input type="text" placeholder={`Address Line 2 optional`} /> */}
 
               <AddressLine2Container>
                 <AddressLine2Input
                   type="text"
-                  value={inputValue}
-                  onChange={handleChange}
+                  value={address.addressLine2}
+                  onChange={(e) => updateAddress({ addressLine2: e.target.value })}
+                // value={inputValue}
+                // onChange={handleChange}
                 />
-                {!inputValue && (
+                {!address.addressLine2 && (
                   <AddressLine2Placeholder>
                     <AddressLine2Span>Address Line 2</AddressLine2Span>
                     <OptionalSpan>optional</OptionalSpan>
                   </AddressLine2Placeholder>
                 )}
+                {/* {!inputValue && (
+                  <AddressLine2Placeholder>
+                    <AddressLine2Span>Address Line 2</AddressLine2Span>
+                    <OptionalSpan>optional</OptionalSpan>
+                  </AddressLine2Placeholder>
+                )} */}
               </AddressLine2Container>
             </ThirdInputLine>
             <FourthInputLine>
-              <input type="text" placeholder={'Neighborhood'} required />
-              <input type="text" placeholder={'City'} required />
-              <input type="text" placeholder={'State'} required />
+              <input
+                type="text"
+                placeholder={'Neighborhood'}
+                value={address.neighborhood}
+                onChange={(e) => updateAddress({ neighborhood: e.target.value })}
+                required />
+              <input
+                type="text"
+                placeholder={'City'}
+                value={address.city}
+                onChange={(e) => updateAddress({ city: e.target.value })}
+                required />
+              <input
+                type="text"
+                placeholder={'State'}
+                value={address.state}
+                onChange={(e) => updateAddress({ state: e.target.value })}
+                required />
             </FourthInputLine>
           </AddressForm>
         </AddressContainer>
@@ -110,15 +171,15 @@ export function Checkout() {
           </PaymentContainerHeader>
 
           <PaymentOptions>
-            <CreditCardBtn>
+            <CreditCardBtn onClick={() => setPaymentMethod('Credit Card')}>
               <CreditCardIcon size={16} />
               CREDIT CARD
             </CreditCardBtn>
-            <DebitCardBtn>
+            <DebitCardBtn onClick={() => setPaymentMethod('Debit Card')}>
               <BankIcon size={16} />
               DEBIT CARD
             </DebitCardBtn>
-            <CashBtn>
+            <CashBtn onClick={() => setPaymentMethod('Cash')}>
               <MoneyIcon size={16} />
               CASH
             </CashBtn>
@@ -148,7 +209,6 @@ export function Checkout() {
                     <QuantSelAndRemoveBtn>
                       <QuantitySelector style={{ margin: '0' }}>
                         <MinusButton onClick={() => handleDecrease(item.id)}>-</MinusButton>
-                        {/*<input type="number"*/} {/*value={quantity}*/} {/*value={1} />*/}
                         <span>{item.quantity}</span>
                         <PlusButton onClick={() => handleIncrease(item.id)}>+</PlusButton>
                       </QuantitySelector>
@@ -168,52 +228,6 @@ export function Checkout() {
               </React.Fragment>
             ))
           )}
-
-          {/*<CartItems>
-            <CoffeeImage src={traditionalEspresso} alt="Traditional Espresso" />
-            <NameAndButtons>
-              <Name>Traditional Espresso</Name>
-              <QuantSelAndRemoveBtn>
-                <QuantitySelector style={{ margin: '0' }}>
-                  <MinusButton>-</MinusButton> 
-                  <input type="number"*/} {/*value={quantity}*/} {/*value={1} />
-                  <PlusButton>+</PlusButton>
-                </QuantitySelector>
-                <RemoveButton>
-                  <TrashIcon size={16} />
-                  REMOVE</RemoveButton>
-              </QuantSelAndRemoveBtn>
-            </NameAndButtons>
-            <Price>
-              <PriceNumber>
-                $&nbsp;9.90
-              </PriceNumber>
-            </Price>
-          </CartItems>
-          <GrayLine></GrayLine>*/}
-
-          {/*<CartItems>
-            <CoffeeImage src={latte} alt="Traditional Espresso" />
-            <NameAndButtons>
-              <Name>Latte</Name>
-              <QuantSelAndRemoveBtn>
-                <QuantitySelector style={{ margin: '0' }}>
-                  <MinusButton>-</MinusButton>
-                  <input type="number"*/} {/*value={quantity}*/} {/*value={1} />
-                  <PlusButton>+</PlusButton>
-                </QuantitySelector>
-                <RemoveButton>
-                  <TrashIcon size={16} />
-                  REMOVE</RemoveButton>
-              </QuantSelAndRemoveBtn>
-            </NameAndButtons>
-            <Price>
-              <PriceNumber>
-                $&nbsp;19.80
-              </PriceNumber>
-            </Price>
-          </CartItems>          
-          <GrayLine></GrayLine>*/}
 
           {cart.length > 0 && (
             <TotalContainer>
@@ -238,7 +252,7 @@ export function Checkout() {
             </TotalContainer>
           )}
 
-          <CheckoutBtn onClick={handleCheckoutMainPageBtn}>
+          <CheckoutBtn type="submit" onClick={handleCheckoutMainPageBtn}>
             {cart.length === 0 ? "MAIN PAGE" : "CHECKOUT"}
           </CheckoutBtn>
         </RightSideContent>

@@ -1,7 +1,13 @@
+import { useCheckout } from '../../contexts/ClientDataContext';
+import { useLocation } from 'react-router-dom';
 import { AddressContent, AddressSection, CityAndStateLine, DeliveryContent, DeliveryEstimateTime, DeliveryEstimateTxt, DeliverySection, DeliveryToTxt, DollarIcon, DollarWrapper, LeftSide, MapPinIcon, MapPinWrapper, OrderConfirmedContainer, OrderMainInfo, OrderMainInfoContainer, PaymentContent, PaymentOnDeliveryTxt, PaymentOption, PaymentSection, RightSide, Street, StreetAddressLine, Subtitle, TimerIcon, TimerWrapper, Title } from "./styles";
 import orderConfirmedImg from '../../assets/order-confirmed-illustration.svg'
 
 export function OrderConfirmed() {
+  const { address } = useCheckout();
+
+  const location = useLocation();
+  const paymentMethod = location.state?.paymentMethod || 'No payment method selected';
 
   return (
     <OrderConfirmedContainer>
@@ -18,9 +24,9 @@ export function OrderConfirmed() {
               <AddressContent>
                 <StreetAddressLine>
                   <DeliveryToTxt>Delivery to&nbsp;</DeliveryToTxt>
-                  <Street>João Daniel Martinelli Street, 102</Street>
+                  <Street>{address.streetAddress}, {address.houseNumber}, {address.addressLine2}</Street>
                 </StreetAddressLine>
-                <CityAndStateLine>Farrapos, Porto Alegre, Rio Grande do Sul (RS)</CityAndStateLine>
+                <CityAndStateLine>{address.neighborhood}, {address.city}, {address.state}, {address.zipCode}</CityAndStateLine>
               </AddressContent>
             </AddressSection>
 
@@ -40,7 +46,7 @@ export function OrderConfirmed() {
               </DollarWrapper>
               <PaymentContent>
                 <PaymentOnDeliveryTxt>Payment on delivery</PaymentOnDeliveryTxt>
-                <PaymentOption>Credit Card</PaymentOption>
+                <PaymentOption>{paymentMethod}</PaymentOption>
               </PaymentContent>
             </PaymentSection>
           </OrderMainInfo>

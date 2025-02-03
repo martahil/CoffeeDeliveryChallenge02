@@ -57,11 +57,11 @@ export const AddressSubtitle = styled.div`
   margin-bottom: 2rem;
 `
 
-export const AddressForm = styled.div`
+export const AddressForm = styled.form`
   font-family: 'Roboto', sans-serif;
   font-size: 0.875rem; /* S */
-  font-weight: 400; /* Regular */      
-
+  font-weight: 400; /* Regular */   
+  
   input {
     color: ${props => props.theme.colors['base-text']};
     background: ${props => props.theme.colors['base-input']};
@@ -207,9 +207,7 @@ export const PaymentOptions = styled.div`
   button:focus {
   border: solid 1px ${props => props.theme.colors['purple-dark']};
   background: ${props => props.theme.colors['purple-light']}; 
-  }
-
-  
+  }  
 `
 
 export const CreditCardBtn = styled.button` 

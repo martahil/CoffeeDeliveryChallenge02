@@ -84,6 +84,10 @@ export const Street = styled.span`
   font-weight: bold; 
 `
 
+export const AddressLine2 = styled.span`
+  
+`
+
 export const CityAndStateLine = styled.span`
   font-size: 1rem;
   font-weight: 400; /* Regular */
