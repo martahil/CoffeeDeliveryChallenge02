@@ -1,6 +1,4 @@
-import { createContext, ReactNode, useContext, useState } from "react";
-
-import { useEffect } from "react";
+import { createContext, ReactNode, useContext, useState, useEffect } from "react";
 
 interface CartItem {
   id: number;

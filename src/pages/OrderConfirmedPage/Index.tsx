@@ -1,7 +1,9 @@
 import { useEffect } from "react";
+import { useLocation } from 'react-router-dom';
+
 import { useCheckout } from '../../contexts/ClientDataContext';
 import { useCart } from '../../contexts/CartContext';
-import { useLocation } from 'react-router-dom';
+
 import { AddressContent, AddressSection, CityAndStateLine, DeliveryContent, DeliveryEstimateTime, DeliveryEstimateTxt, DeliverySection, DeliveryToTxt, DollarIcon, DollarWrapper, LeftSide, MapPinIcon, MapPinWrapper, OrderConfirmedContainer, OrderMainInfo, OrderMainInfoContainer, PaymentContent, PaymentOnDeliveryTxt, PaymentOption, PaymentSection, RightSide, Street, StreetAddressLine, Subtitle, TimerIcon, TimerWrapper, Title } from "./styles";
 import orderConfirmedImg from '../../assets/order-confirmed-illustration.svg'
 

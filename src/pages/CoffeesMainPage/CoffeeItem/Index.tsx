@@ -1,9 +1,9 @@
-import { CoffeeItemContainer, Image, Description, Name, Tag, Price, DollarSign, PriceNumber, QuantitySelector, PlusButton, MinusButton, PriceAndQuantity, ShoppingCartSimpleIcon, CartWrapper, TagWrapper } from "./styles";
-
 import { useState } from "react";
-import { useCart } from "../../../../src/contexts/CartContext";
 
+import { useCart } from "../../../../src/contexts/CartContext";
 import { handleQuantityChange } from "../../../contexts/CoffeeQuantityChange";
+
+import { CoffeeItemContainer, Image, Description, Name, Tag, Price, DollarSign, PriceNumber, QuantitySelector, PlusButton, MinusButton, PriceAndQuantity, ShoppingCartSimpleIcon, CartWrapper, TagWrapper } from "./styles";
 
 interface CoffeeItemProps {
   id: number;
@@ -24,7 +24,7 @@ export function CoffeeItem({
   name,
   description,
   price,
-  /*quantity,*/ }: CoffeeItemProps) {
+  }: CoffeeItemProps) {
   const isHawaiian = name === "Hawaiian";
 
   const [quantity, setQuantity] = useState(1);
@@ -57,7 +57,6 @@ export function CoffeeItem({
         fontWeight: isHawaiian ? 400 : "bold",
       }}
       >
-        {/* font-weight: 400; /* Regular */}
         <p>{name}</p>
       </Name>
       <Description>
@@ -74,7 +73,6 @@ export function CoffeeItem({
         </Price>
         <QuantitySelector>
           <MinusButton onClick={decrease}>-</MinusButton>
-          {/* <input type="number" value={quantity} /> */}
           <span>{quantity}</span>
           <PlusButton onClick={increase}>+</PlusButton>
         </QuantitySelector>

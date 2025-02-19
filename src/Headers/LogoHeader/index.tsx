@@ -1,9 +1,10 @@
+import { useNavigate } from 'react-router-dom';
+
+import { useCart } from '../../contexts/CartContext'
+
 import { LeftLogo, LogoHeaderContainer, Location, City, ShoppingCartSimpleIcon, CartWrapper, CartCounter } from './styles'
 import logo from '../../assets/logo.svg'
 import { MapPin } from 'phosphor-react'
-
-import { useNavigate } from 'react-router-dom';
-import { useCart } from '../../contexts/CartContext'
 
 export function LogoHeader() {
   const navigate = useNavigate();
