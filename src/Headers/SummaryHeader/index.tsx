@@ -16,25 +16,25 @@ export function SummaryHeader() {
         <FeaturesSection>
           <ShoppingCartItem>
             <CartWrapper>
-              <ShoppingCartSimpleIcon size={16} />
+              <ShoppingCartSimpleIcon size={16} weight="fill" />
             </CartWrapper>
             <p>Simple and secure purchase</p>
           </ShoppingCartItem>
           <PackageItem>
             <PackageWrapper>
-              <PackageIcon size={16} />
+              <PackageIcon size={16} weight="fill" />
             </PackageWrapper>
             <p>Packaging keeps the perfect</p>
           </PackageItem>
           <TimerItem>
             <TimerWrapper>
-              <TimerIcon size={16} />
+              <TimerIcon size={16} weight="fill" />
             </TimerWrapper>
             <p>Fast and tracked delivery</p>
           </TimerItem>
           <CoffeeItem>
             <CoffeeWrapper>
-              <CoffeeIcon size={16} />
+              <CoffeeIcon size={16} weight="fill" />
             </CoffeeWrapper>
             <p>The coffee arrives fresh to you</p>
           </CoffeeItem>

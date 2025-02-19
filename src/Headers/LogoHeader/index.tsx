@@ -31,11 +31,11 @@ export function LogoHeader() {
 
       <Location>
         <City>
-          <MapPin size={22} />
+          <MapPin size={22} weight="fill" />
           <h1>New York, NY</h1>
         </City>
         <CartWrapper onClick={handleCart} isDisabled={isCartEmpty || isOrderConfirmedPage}>
-          <ShoppingCartSimpleIcon size={22} />
+          <ShoppingCartSimpleIcon size={22} weight="fill" />
         </CartWrapper>
         <CartCounter>
           <h1>{totalItems}</h1>
