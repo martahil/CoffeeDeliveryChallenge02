@@ -1,4 +1,4 @@
-import { ShoppingCart } from 'phosphor-react'
+import { Minus, Plus, ShoppingCart } from 'phosphor-react'
 import styled from 'styled-components'
 
 export const CoffeeItemContainer = styled.div`
@@ -132,13 +132,19 @@ export const QuantitySelector = styled.div`
   }
 `
 
-export const MinusButton = styled.button`
-   &:hover {
+export const MinusButton = styled(Minus)`
+  color: ${props => props.theme.colors['purple']};
+  cursor: pointer;
+  
+  &:hover {
     color: ${props => props.theme.colors['purple-dark']};
   }
 `
 
-export const PlusButton = styled.button`
+export const PlusButton = styled(Plus)`
+  color: ${props => props.theme.colors['purple']};
+  cursor: pointer;
+
   &:hover {
     color: ${props => props.theme.colors['purple-dark']};
   }

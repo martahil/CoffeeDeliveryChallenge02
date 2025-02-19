@@ -212,9 +212,9 @@ export function Checkout() {
                     <Name>{item.name}</Name>
                     <QuantSelAndRemoveBtn>
                       <QuantitySelector style={{ margin: '0' }}>
-                        <MinusButton onClick={() => handleDecrease(item.id)}>-</MinusButton>
+                        <MinusButton onClick={() => handleDecrease(item.id)}><MinusButton size={14} /></MinusButton>
                         <span>{item.quantity}</span>
-                        <PlusButton onClick={() => handleIncrease(item.id)}>+</PlusButton>
+                        <PlusButton onClick={() => handleIncrease(item.id)}><PlusButton size={14} /></PlusButton>
                       </QuantitySelector>
                       <RemoveButton onClick={() => removeFromCart(item.id)}>
                         <TrashIcon size={16} />

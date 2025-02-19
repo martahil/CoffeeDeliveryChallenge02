@@ -72,9 +72,9 @@ export function CoffeeItem({
           </PriceNumber>
         </Price>
         <QuantitySelector>
-          <MinusButton onClick={decrease}>-</MinusButton>
+          <MinusButton onClick={decrease}><MinusButton size={14} /></MinusButton>
           <span>{quantity}</span>
-          <PlusButton onClick={increase}>+</PlusButton>
+          <PlusButton onClick={increase}><PlusButton size={14} /></PlusButton>
         </QuantitySelector>
         <CartWrapper onClick={handleAddToCart}><ShoppingCartIcon size={22} /></CartWrapper>
       </PriceAndQuantity>

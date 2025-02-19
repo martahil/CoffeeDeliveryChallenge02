@@ -321,7 +321,7 @@ export const RemoveButton = styled.button`
   font-weight: 400; /* Regular */
   font-family: 'Roboto', sans-serif;
   cursor: pointer;
-  border: none;
+  border: none;  
 `
 
 export const TrashIcon = styled(Trash)`
