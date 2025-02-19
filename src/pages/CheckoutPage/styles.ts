@@ -237,7 +237,7 @@ export const RightSide = styled.div`
 
 export const RightSideContent = styled.div`
   background-color: ${props => props.theme.colors['base-card']};
-  border-radius: 10px 30px 10px 30px;
+  border-radius: 6px 36px;
   padding: 2.5rem;
 `
 

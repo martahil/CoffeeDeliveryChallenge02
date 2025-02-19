@@ -8,7 +8,7 @@ export const CoffeeItemContainer = styled.div`
  display: flex;
  align-items: center;
  flex-direction: column;
- border-radius: 10px 30px 50px 30px;
+ border-radius: 6px 36px;
  margin-bottom: 1.25rem;
 `
 
