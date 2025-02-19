@@ -1,5 +1,9 @@
 import styled from 'styled-components'
 
+interface CartWrapperProps {
+  isDisabled: boolean;
+}
+
 import { ShoppingCartSimple } from 'phosphor-react'
 
 export const LogoHeaderContainer = styled.main`  
@@ -33,7 +37,9 @@ export const ShoppingCartSimpleIcon = styled(ShoppingCartSimple)`
   color: ${props => props.theme.colors['yellow-dark']};
 `
 
-export const CartWrapper = styled.button`
+export const CartWrapper = styled.button.withConfig({
+  shouldForwardProp: (prop) => prop !== 'isDisabled',
+})<CartWrapperProps>`
   display: inline-flex; 
   align-items: center;
   justify-content: center;
@@ -42,6 +48,10 @@ export const CartWrapper = styled.button`
   border-radius: 6px;
   border: none;
   cursor: pointer;
+
+  cursor: ${({ isDisabled }) => (isDisabled ? 'not-allowed' : 'pointer')};
+  pointer-events: ${({ isDisabled }) => (isDisabled ? 'none' : 'auto')};
+  opacity: ${({ isDisabled }) => (isDisabled ? 0.5 : 1)};
 `
 
 export const City = styled.div`  
