@@ -8,7 +8,7 @@ import { QuantitySelector, MinusButton, PlusButton } from "../CoffeesMainPage/Co
 import { useCart } from "../../../src/contexts/CartContext";
 import { useNavigate } from 'react-router-dom';
 
-export function Checkout() {
+export function Checkout() {  
   const { address, updateAddress } = useCheckout();
 
   const navigate = useNavigate();
@@ -41,6 +41,12 @@ export function Checkout() {
       alert('Please select a payment method.');
       return;
     }
+
+    const orderId = new Date().getTime()
+    console.log(orderId)
+    console.log(cart)
+    console.log(address)
+    console.log(paymentMethod)
 
     navigate('/orderconfirmed', { state: { paymentMethod } });
   }

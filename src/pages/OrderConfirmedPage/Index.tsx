@@ -1,13 +1,21 @@
+import { useEffect } from "react";
 import { useCheckout } from '../../contexts/ClientDataContext';
+import { useCart } from '../../contexts/CartContext';
 import { useLocation } from 'react-router-dom';
 import { AddressContent, AddressSection, CityAndStateLine, DeliveryContent, DeliveryEstimateTime, DeliveryEstimateTxt, DeliverySection, DeliveryToTxt, DollarIcon, DollarWrapper, LeftSide, MapPinIcon, MapPinWrapper, OrderConfirmedContainer, OrderMainInfo, OrderMainInfoContainer, PaymentContent, PaymentOnDeliveryTxt, PaymentOption, PaymentSection, RightSide, Street, StreetAddressLine, Subtitle, TimerIcon, TimerWrapper, Title } from "./styles";
 import orderConfirmedImg from '../../assets/order-confirmed-illustration.svg'
 
 export function OrderConfirmed() {
   const { address } = useCheckout();
-
+  const { clearCart, cart } = useCart()
   const location = useLocation();
   const paymentMethod = location.state?.paymentMethod || 'No payment method selected';
+
+  useEffect(() => {
+    if (cart.length > 0) {
+      clearCart();
+    }
+  }, [cart, clearCart]);
 
   return (
     <OrderConfirmedContainer>
