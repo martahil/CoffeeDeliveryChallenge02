@@ -6,11 +6,11 @@ export function SummaryHeader() {
     <SummaryHeaderContainer>
       <HighlightsSection>
         <Title>
-          <p style={{ height: "3.875rem" }}>Find the perfect coffee</p>
-          <p style={{ height: "3.875rem" }}>for any time of the day</p>
+          <h1 style={{ height: "3.875rem" }}>Find the perfect coffee</h1>
+          <h1 style={{ height: "3.875rem" }}>for any time of the day</h1>
         </Title>
         <Subtitle>
-          <p>With Coffee Delivery, you get your coffee anywhere, anytime</p>
+          <span>With Coffee Delivery, you get your coffee anywhere, anytime</span>
         </Subtitle>
 
         <FeaturesSection>

@@ -27,7 +27,7 @@ export const Title = styled.div`
   margin-bottom: 1rem;  
   white-space: nowrap;
 
-  p {
+  h1 {
     font-size: 3rem;
     font-weight: 800;
     font-family: 'Baloo 2';
@@ -36,12 +36,14 @@ export const Title = styled.div`
 `
 
 export const Subtitle = styled.div`  
-  font-size: 1.25rem;
-  font-weight: 400; /* Regular */
-  font-family: 'Roboto', sans-serif;
-  color: ${props => props.theme.colors['base-title']};
-  height: 3.25rem;
-  white-space: nowrap;
+  span {
+    font-size: 1.25rem;
+    font-weight: 400; /* Regular */
+    font-family: 'Roboto', sans-serif;
+    color: ${props => props.theme.colors['base-subtitle']};
+    height: 3.25rem;
+    white-space: nowrap;
+  }
 `
 
 export const FeaturesSection = styled.div`  
