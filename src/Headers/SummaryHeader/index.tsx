@@ -1,4 +1,4 @@
-import { CartWrapper, CoffeeIcon, CoffeeImg, CoffeeItem, CoffeeWrapper, FeaturesSection, HighlightsSection, PackageIcon, PackageItem, PackageWrapper, ShoppingCartItem, ShoppingCartSimpleIcon, Subtitle, SummaryHeaderContainer, TimerIcon, TimerItem, TimerWrapper, Title, TitleAndSubtitle } from "./styles";
+import { CartWrapper, CoffeeIcon, CoffeeImg, CoffeeItem, CoffeeWrapper, FeaturesSection, HighlightsSection, PackageIcon, PackageItem, PackageWrapper, ShoppingCartItem, ShoppingCartIcon, Subtitle, SummaryHeaderContainer, TimerIcon, TimerItem, TimerWrapper, Title, TitleAndSubtitle } from "./styles";
 import coffee from '../../assets/coffee.svg'
 
 export function SummaryHeader() {
@@ -16,7 +16,7 @@ export function SummaryHeader() {
         <FeaturesSection>
           <ShoppingCartItem>
             <CartWrapper>
-              <ShoppingCartSimpleIcon size={16} weight="fill" />
+              <ShoppingCartIcon size={16} weight="fill" />
             </CartWrapper>
             <p>Simple and secure purchase</p>
           </ShoppingCartItem>

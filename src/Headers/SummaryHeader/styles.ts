@@ -1,4 +1,4 @@
-import { Coffee, Package, ShoppingCartSimple, Timer } from 'phosphor-react'
+import { Coffee, Package, ShoppingCart, Timer } from 'phosphor-react'
 import styled from 'styled-components'
 
 export const SummaryHeaderContainer = styled.main` 
@@ -67,7 +67,7 @@ export const ShoppingCartItem = styled.div`
   gap: 0.75rem;
   margin-bottom: 1.25rem;
 `
-export const ShoppingCartSimpleIcon = styled(ShoppingCartSimple)`  
+export const ShoppingCartIcon = styled(ShoppingCart)`  
   color: ${props => props.theme.colors['background']};  
 `
 export const CartWrapper = styled.div`

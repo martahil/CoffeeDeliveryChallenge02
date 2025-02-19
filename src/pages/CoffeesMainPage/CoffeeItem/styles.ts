@@ -1,4 +1,4 @@
-import { ShoppingCartSimple } from 'phosphor-react'
+import { ShoppingCart } from 'phosphor-react'
 import styled from 'styled-components'
 
 export const CoffeeItemContainer = styled.div`
@@ -144,7 +144,7 @@ export const PlusButton = styled.button`
   }
 `
 
-export const ShoppingCartSimpleIcon = styled(ShoppingCartSimple)`
+export const ShoppingCartIcon = styled(ShoppingCart)`
   color: ${props => props.theme.colors['base-card']};
 `
 export const CartWrapper = styled.button`

@@ -4,7 +4,7 @@ interface CartWrapperProps {
   isDisabled: boolean;
 }
 
-import { ShoppingCartSimple } from 'phosphor-react'
+import { ShoppingCart } from 'phosphor-react'
 
 export const LogoHeaderContainer = styled.main`  
   display: grid;
@@ -33,7 +33,7 @@ export const Location = styled.div`
   position: relative;
 `
 
-export const ShoppingCartSimpleIcon = styled(ShoppingCartSimple)`
+export const ShoppingCartIcon = styled(ShoppingCart)`
   color: ${props => props.theme.colors['yellow-dark']};
 `
 
@@ -61,7 +61,7 @@ export const City = styled.div`
   border-radius: 6px;  
   gap: 0.25rem;
   padding: 0.5rem;
-  color: ${props => props.theme.colors['purple-dark']};
+  color: ${props => props.theme.colors['purple']};
   background: ${props => props.theme.colors['purple-light']};;
 
   h1 {
@@ -69,6 +69,7 @@ export const City = styled.div`
     font-size: 0.875rem; /* S */
     font-weight: 400; /* Regular */
     white-space: nowrap;
+    color: ${props => props.theme.colors['purple-dark']};
   }
 `
 

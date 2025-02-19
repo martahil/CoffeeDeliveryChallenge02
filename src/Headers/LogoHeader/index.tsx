@@ -2,7 +2,7 @@ import { useNavigate } from 'react-router-dom';
 
 import { useCart } from '../../contexts/CartContext'
 
-import { LeftLogo, LogoHeaderContainer, Location, City, ShoppingCartSimpleIcon, CartWrapper, CartCounter } from './styles'
+import { LeftLogo, LogoHeaderContainer, Location, City, ShoppingCartIcon, CartWrapper, CartCounter } from './styles'
 import logo from '../../assets/logo.svg'
 import { MapPin } from 'phosphor-react'
 
@@ -35,7 +35,7 @@ export function LogoHeader() {
           <h1>New York, NY</h1>
         </City>
         <CartWrapper onClick={handleCart} isDisabled={isCartEmpty || isOrderConfirmedPage}>
-          <ShoppingCartSimpleIcon size={22} weight="fill" />
+          <ShoppingCartIcon size={22} weight="fill" />
         </CartWrapper>
         <CartCounter>
           <h1>{totalItems}</h1>

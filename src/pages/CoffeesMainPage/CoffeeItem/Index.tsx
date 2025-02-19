@@ -3,7 +3,7 @@ import { useState } from "react";
 import { useCart } from "../../../../src/contexts/CartContext";
 import { handleQuantityChange } from "../../../contexts/CoffeeQuantityChange";
 
-import { CoffeeItemContainer, Image, Description, Name, Tag, Price, DollarSign, PriceNumber, QuantitySelector, PlusButton, MinusButton, PriceAndQuantity, ShoppingCartSimpleIcon, CartWrapper, TagWrapper } from "./styles";
+import { CoffeeItemContainer, Image, Description, Name, Tag, Price, DollarSign, PriceNumber, QuantitySelector, PlusButton, MinusButton, PriceAndQuantity, ShoppingCartIcon, CartWrapper, TagWrapper } from "./styles";
 
 interface CoffeeItemProps {
   id: number;
@@ -76,7 +76,7 @@ export function CoffeeItem({
           <span>{quantity}</span>
           <PlusButton onClick={increase}>+</PlusButton>
         </QuantitySelector>
-        <CartWrapper onClick={handleAddToCart}><ShoppingCartSimpleIcon size={22} /></CartWrapper>
+        <CartWrapper onClick={handleAddToCart}><ShoppingCartIcon size={22} /></CartWrapper>
       </PriceAndQuantity>
     </CoffeeItemContainer>
   )
