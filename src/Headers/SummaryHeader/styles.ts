@@ -31,18 +31,18 @@ export const Title = styled.div`
   padding-top: 5.875rem;
 
   h1 {
-    font-size: 3rem;
-    font-weight: 800;
     font-family: 'Baloo 2';
+    font-size: 3rem;
+    font-weight: 800;    
     color: ${props => props.theme.colors['base-title']};
   }
 `
 
 export const Subtitle = styled.div`  
   span {
-    font-size: 1.25rem;
-    font-weight: 400; /* Regular */
     font-family: 'Roboto', sans-serif;
+    font-size: 1.25rem;
+    font-weight: 400; /* Regular */    
     color: ${props => props.theme.colors['base-subtitle']};
     height: 3.25rem;
     white-space: nowrap;
@@ -59,9 +59,9 @@ export const FeaturesSection = styled.div`
   //padding-bottom: 5.875rem;
   
   p {
-    font-size: 1rem;
-    font-weight: 400; /* Regular */
     font-family: 'Roboto', sans-serif;
+    font-size: 1rem;
+    font-weight: 400; /* Regular */    
     color: ${props => props.theme.colors['base-text']};
     white-space: nowrap;
   }

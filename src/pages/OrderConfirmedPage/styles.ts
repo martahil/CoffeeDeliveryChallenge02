@@ -19,10 +19,10 @@ export const LeftSide = styled.div`
 `
 
 export const Title = styled.p`
-  color: ${props => props.theme.colors['yellow-dark']};
   font-family: 'Baloo 2';
   font-size: 2rem;
   font-weight: bolder;
+  color: ${props => props.theme.colors['yellow-dark']};
   margin-bottom: 0.25rem;
 `
 

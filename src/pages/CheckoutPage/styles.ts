@@ -283,9 +283,9 @@ export const NameAndButtons = styled.div`
 `
 
 export const Name = styled.div`
-  font-size: 1rem;
-  font-weight: 400; /* Regular */
   font-family: 'Roboto', sans-serif;
+  font-size: 1rem;
+  font-weight: 400; /* Regular */  
   color: ${props => props.theme.colors['base-subtitle']};
   margin-bottom: 0.5rem;
 `
@@ -293,9 +293,9 @@ export const Name = styled.div`
 export const Price = styled.div`
   /* display: flex; */
   margin-left: auto; /* right alignment */
-  font-size: 1rem;
-  font-weight: bold; 
   font-family: 'Roboto', sans-serif;
+  font-size: 1rem;
+  font-weight: bold;   
   color: ${props => props.theme.colors['base-text']};  
 `
 
@@ -314,12 +314,12 @@ export const RemoveButton = styled.button`
   gap: 0.25px;
 
   padding: 0.5rem;
-  background: ${props => props.theme.colors['base-button']};
-  color: ${props => props.theme.colors['base-text']};
-  border-radius: 6px;
+  font-family: 'Roboto', sans-serif;
   font-size: 0.75rem;
   font-weight: 400; /* Regular */
-  font-family: 'Roboto', sans-serif;
+  color: ${props => props.theme.colors['base-text']};
+  background: ${props => props.theme.colors['base-button']};
+  border-radius: 6px;
   cursor: pointer;
   border: none;  
 `
@@ -336,9 +336,9 @@ export const GrayLine = styled.div`
 `
 
 export const TotalContainer = styled.div`
+  font-family: 'Roboto', sans-serif;
   font-size: 0.875rem;
   font-weight: 400; /* Regular */
-  font-family: 'Roboto', sans-serif;
   color: ${props => props.theme.colors['base-text']};
 `
 

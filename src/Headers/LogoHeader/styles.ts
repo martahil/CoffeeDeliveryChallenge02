@@ -69,8 +69,8 @@ export const City = styled.div`
     font-family: 'Roboto';
     font-size: 0.875rem; /* S */
     font-weight: 400; /* Regular */
-    white-space: nowrap;
     color: ${props => props.theme.colors['purple-dark']};
+    white-space: nowrap;
   }
 `
 

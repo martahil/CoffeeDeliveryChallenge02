@@ -19,13 +19,13 @@ export const Image = styled.div`
 `
 
 export const Tag = styled.div`
+  font-family: 'Roboto', sans-serif;
+  font-size: 0.625rem;
+  font-weight: bold;
   color: ${props => props.theme.colors['yellow-dark']};
   background: ${props => props.theme.colors['yellow-light']};
   border-radius: 100px;
   padding: 0.25rem 0.5rem;
-  font-family: 'Roboto', sans-serif;
-  font-size: 0.625rem;
-  font-weight: bold;
   margin-top: 0.75rem;
 `
 export const TagWrapper = styled.div`
@@ -35,20 +35,20 @@ export const TagWrapper = styled.div`
 `
 
 export const Name = styled.div`
-  color: ${props => props.theme.colors['base-subtitle']};
   font-family: 'Baloo 2';
   font-size: 1.25rem;
   /* font-weight: bold; */
+  color: ${props => props.theme.colors['base-subtitle']};
   margin-top: 1rem;
   margin-left: 1.25rem;
   margin-right: 1.25rem;
 `
 
 export const Description = styled.div`
-  color: ${props => props.theme.colors['base-label']};
   font-family: 'Roboto', sans-serif;
   font-size: 0.875rem; /* S */
   font-weight: 400; /* Regular */
+  color: ${props => props.theme.colors['base-label']};
   text-align: center;
   margin-top: 0.5rem;
   margin-left: 1.25rem;
@@ -72,17 +72,17 @@ export const Price = styled.div`
 `
 
 export const DollarSign = styled.span`
-  color: ${props => props.theme.colors['base-text']};
   font-family: 'Roboto', sans-serif;
   font-size: 1rem;
   font-weight: 400; /* Regular */
+  color: ${props => props.theme.colors['base-text']};
 `
 
 export const PriceNumber = styled.span`
-  color: ${props => props.theme.colors['base-text']};
   font-family: 'Baloo 2';
   font-size: 1.5rem;
   font-weight: bolder; /* ExtraBold */
+  color: ${props => props.theme.colors['base-text']};
 `
 
 export const QuantitySelector = styled.div`
