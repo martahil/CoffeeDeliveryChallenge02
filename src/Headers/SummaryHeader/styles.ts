@@ -6,8 +6,8 @@ export const SummaryHeaderContainer = styled.main`
   grid-template-columns: 1fr 1fr;  
   justify-content: space-between;
   gap: 3.5rem; 
-  /* margin-top: 5.875rem;
-  margin-bottom : 6.75rem; */
+  /* margin-top: 5.875rem; */
+  margin-bottom : 6.75rem;
 `
 export const HighlightsSection = styled.div`
   margin-top: 5.875rem;
@@ -21,11 +21,14 @@ export const CoffeeImg = styled.div`
   margin-right: 10rem;
   margin-top: 5.75rem;
   margin-bottom : 5.75rem;
+  padding-top: 5.75rem;
+  //padding-bottom: 5.75rem;
 `
 
 export const Title = styled.div`  
   margin-bottom: 1rem;  
   white-space: nowrap;
+  padding-top: 5.875rem;
 
   h1 {
     font-size: 3rem;
@@ -53,6 +56,7 @@ export const FeaturesSection = styled.div`
   /* justify-content: space-between; */
   height: 5.25rem;
   margin-top: 4.125rem;
+  //padding-bottom: 5.875rem;
   
   p {
     font-size: 1rem;

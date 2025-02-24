@@ -11,6 +11,7 @@ export const LogoHeaderContainer = styled.main`
   grid-template-columns: 1fr auto;
   padding: 2rem 10rem 2rem 10rem;  
   gap: 1rem;
+  background: ${props => props.theme.colors['background']};
 `
 
 export const LeftLogo = styled.button`  

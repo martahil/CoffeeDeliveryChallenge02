@@ -6,7 +6,11 @@ import { LeftLogo, LogoHeaderContainer, Location, City, ShoppingCartIcon, CartWr
 import logo from '../../assets/logo.svg'
 import { MapPin } from 'phosphor-react'
 
-export function LogoHeader() {
+interface LogoHeaderProps {
+  isFixed?: boolean;
+}
+
+export function LogoHeader({ isFixed = false }: LogoHeaderProps) {
   const navigate = useNavigate();
   const { cart } = useCart();
   const isOrderConfirmedPage = location.pathname === '/orderconfirmed';
@@ -24,7 +28,7 @@ export function LogoHeader() {
   }
 
   return (
-    <LogoHeaderContainer>
+    <LogoHeaderContainer style={{ position: isFixed ? 'fixed' : 'static', top: 0, width: '100%', zIndex: 1000 }}>
       <LeftLogo onClick={handleMainPageLogoBtn}>
         <img src={logo} alt="Logo" />
       </LeftLogo>
