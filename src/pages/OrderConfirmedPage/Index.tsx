@@ -29,7 +29,7 @@ export function OrderConfirmed() {
           <OrderMainInfo>
             <AddressSection>
               <MapPinWrapper>
-                <MapPinIcon size={16} />
+                <MapPinIcon size={16} weight="fill" />
               </MapPinWrapper>
               <AddressContent>
                 <StreetAddressLine>
@@ -42,7 +42,7 @@ export function OrderConfirmed() {
 
             <DeliverySection>
               <TimerWrapper>
-                <TimerIcon size={16} />
+                <TimerIcon size={16} weight="fill"/>
               </TimerWrapper>
               <DeliveryContent>
                 <DeliveryEstimateTxt>Delivery Estimate</DeliveryEstimateTxt>
@@ -52,7 +52,7 @@ export function OrderConfirmed() {
 
             <PaymentSection>
               <DollarWrapper>
-                <DollarIcon size={16} />
+                <DollarIcon size={16} weight="fill" />
               </DollarWrapper>
               <PaymentContent>
                 <PaymentOnDeliveryTxt>Payment on delivery</PaymentOnDeliveryTxt>
