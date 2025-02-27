@@ -1,50 +1,38 @@
-# React + TypeScript + Vite
+# Coffee Delivery Website
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This is a coffee delivery website built with React and TypeScript. The website allows users to place coffee orders in a simple and fast way, providing a smooth shopping experience.
 
-Currently, two official plugins are available:
+![My Project Screenshot](/src/assets/website-screenshot.png)
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Technologies Used
 
-## Expanding the ESLint configuration
+- Vite: Build tool for optimizing development and performance.
+- styled-components: Library for styling React components, offering an efficient and modular way to apply styles.
+- default theme and global style: Management of global theme and styles for the app.
+- ThemeProvider: Provides the global theme for all components in the app.
+- useContext: Used to share global delivery data, such as customer information and shopping cart, across components.
+- useState: Manages local state within components.
+- useEffect: Used for handling side effects, such as API calls and DOM updates.
+- useNavigate and useLocation: React Router hooks for navigating between pages and capturing information from the URL.
+- phosphor-react: Icon library for adding modern and customizable icons to the site.
+- React Router: Navigation management between pages.
+- BrowserRouter: Navigation component for defining the app's routes.
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+## Features
 
-- Configure the top-level `parserOptions` property like this:
+- Navigation between different pages of the delivery service, including product selection and checkout.
+- Shopping cart management with the ability to add and remove items.
+- Display of customer and order details during the checkout process.
+- Application of a global theme and styles for a consistent experience throughout the app.
 
-```js
-export default tseslint.config({
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
-```
+## Figma Design
 
-- Replace `tseslint.configs.recommended` to `tseslint.configs.recommendedTypeChecked` or `tseslint.configs.strictTypeChecked`
-- Optionally add `...tseslint.configs.stylisticTypeChecked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and update the config:
+The design for the Coffee Delivery website was based on the following Figma file:
+https://www.figma.com/design/5yT9ZzZmRQRS4yivGGB3pl/Coffee-Delivery-%E2%80%A2-Desafio-React/duplicate
 
-```js
-// eslint.config.js
-import react from 'eslint-plugin-react'
+## Challenge Information
 
-export default tseslint.config({
-  // Set the react version
-  settings: { react: { version: '18.3' } },
-  plugins: {
-    // Add the react plugin
-    react,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended rules
-    ...react.configs.recommended.rules,
-    ...react.configs['jsx-runtime'].rules,
-  },
-})
-```
+This project was built to fulfill the challenge of the ReactJS course from RocketSeat.
+Instructions can be found here:
+https://chatgpt.com/c/67c0d2b4-cf80-8010-b7ac-3185ddccf6a6
+
