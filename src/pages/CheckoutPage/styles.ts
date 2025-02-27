@@ -110,17 +110,18 @@ export const AddressLine2Container = styled.div`
   align-items: center;
   width: 100%;
 `;
+
 export const AddressLine2Input = styled.input`
-  /* width: 100%;
-  padding: 0.5rem;
-  box-sizing: border-box; */
 `;
+
 export const AddressLine2Span = styled.span`
 `;
+
 export const OptionalSpan = styled.span`
   font-size: 0.75rem;
   font-style: italic;
 `;
+
 export const AddressLine2Placeholder = styled.div`
   position: absolute;
   display: flex;
@@ -130,6 +131,7 @@ export const AddressLine2Placeholder = styled.div`
   padding: 0.75rem;  
   color: ${props => props.theme.colors['base-label']};
 `;
+
 export const FourthInputLine = styled.div`
   display: flex;
   gap: 0.75rem;
@@ -195,7 +197,6 @@ export const PaymentOptions = styled.div`
     color: ${props => props.theme.colors['base-text']};
     background: ${props => props.theme.colors['base-button']};
     border: solid 1px ${props => props.theme.colors['base-button']};
-    /* border: none; */
     border-radius: 6px;
     padding: 1rem;
     cursor: pointer;
@@ -293,7 +294,6 @@ export const Name = styled.div`
 `
 
 export const Price = styled.div`
-  /* display: flex; */
   margin-left: auto; /* right alignment */
   font-family: 'Roboto', sans-serif;
   font-size: 1rem;

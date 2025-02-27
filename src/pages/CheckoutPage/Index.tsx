@@ -114,15 +114,12 @@ export function Checkout() {
                 value={address.houseNumber}
                 onChange={(e) => updateAddress({ houseNumber: e.target.value })}
                 required />
-              {/* <input type="text" placeholder={`Address Line 2 optional`} /> */}
 
               <AddressLine2Container>
                 <AddressLine2Input
                   type="text"
                   value={address.addressLine2}
                   onChange={(e) => updateAddress({ addressLine2: e.target.value })}
-                // value={inputValue}
-                // onChange={handleChange}
                 />
                 {!address.addressLine2 && (
                   <AddressLine2Placeholder>
@@ -130,12 +127,6 @@ export function Checkout() {
                     <OptionalSpan>optional</OptionalSpan>
                   </AddressLine2Placeholder>
                 )}
-                {/* {!inputValue && (
-                  <AddressLine2Placeholder>
-                    <AddressLine2Span>Address Line 2</AddressLine2Span>
-                    <OptionalSpan>optional</OptionalSpan>
-                  </AddressLine2Placeholder>
-                )} */}
               </AddressLine2Container>
             </ThirdInputLine>
             <FourthInputLine>

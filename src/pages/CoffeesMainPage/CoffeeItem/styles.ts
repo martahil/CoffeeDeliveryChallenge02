@@ -3,7 +3,6 @@ import styled from 'styled-components'
 
 export const CoffeeItemContainer = styled.div`
  width: 256px;
- /* height: 310px; */
  background: ${props => props.theme.colors['base-card']};
  display: flex;
  align-items: center;
@@ -37,7 +36,6 @@ export const TagWrapper = styled.div`
 export const Name = styled.div`
   font-family: 'Baloo 2';
   font-size: 1.25rem;
-  /* font-weight: bold; */
   color: ${props => props.theme.colors['base-subtitle']};
   margin-top: 1rem;
   margin-left: 1.25rem;
@@ -104,23 +102,7 @@ export const QuantitySelector = styled.div`
     display: flex;
     text-align: center; 
     line-height: normal; 
-    /* width: 1.5rem; */
   }
-
-  /* input[type="number"]::-webkit-inner-spin-button, input[type="number"]::-webkit-outer-spin-button {
-    -webkit-appearance: none;
-    margin: 0;
-  } */
-  
-  /* Firefox: */
-  /* input[type="number"] {
-    -moz-appearance: textfield;
-    appearance: textfield;
-  } */
-
-  /* input:focus {
-    outline: none;
-  } */
 
   button {
     width: 0.875rem;

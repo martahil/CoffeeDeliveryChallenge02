@@ -15,7 +15,6 @@ export const OrderConfirmedContainer = styled.div`
 `
 
 export const LeftSide = styled.div`
-  
 `
 
 export const Title = styled.p`
@@ -67,7 +66,6 @@ export const MapPinWrapper = styled.div`
 `
 
 export const AddressContent = styled.div`
-  
 `
 
 export const StreetAddressLine = styled.div`
@@ -85,7 +83,6 @@ export const Street = styled.span`
 `
 
 export const AddressLine2 = styled.span`
-  
 `
 
 export const CityAndStateLine = styled.span`
@@ -114,7 +111,6 @@ export const TimerWrapper = styled.div`
 `
 
 export const DeliveryContent = styled.div`
-  
 `
 
 export const DeliveryEstimateTxt = styled.p`
@@ -147,7 +143,6 @@ export const DollarWrapper = styled.div`
 `
 
 export const PaymentContent = styled.div`
-  
 `
 
 export const PaymentOnDeliveryTxt = styled.p`

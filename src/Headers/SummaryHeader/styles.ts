@@ -25,12 +25,10 @@ export const HighlightsSection = styled.div`
 export const CoffeeImg = styled.div`
   width: 29.75rem;
   height: 22.5rem;
-  /* margin-left: 3.5rem; */
   margin-right: 10rem;
   margin-top: 5.75rem;
   margin-bottom : 5.75rem;
   padding-top: 5.75rem;
-  //padding-bottom: 5.75rem;
 `
 
 export const Title = styled.div`  
@@ -59,12 +57,9 @@ export const Subtitle = styled.div`
 
 export const FeaturesSection = styled.div`  
   display: grid;
-  //grid-template-columns: 1fr 1fr;
   grid-template-columns: auto auto;
-  /* justify-content: space-between; */
   height: 5.25rem;
   margin-top: 4.125rem;
-  //padding-bottom: 5.875rem;
   
   p {
     font-family: 'Roboto', sans-serif;
