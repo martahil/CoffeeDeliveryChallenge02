@@ -27,12 +27,12 @@ This is a coffee delivery website built with React and TypeScript. The website a
 
 ## Figma Design
 
-The design for the Coffee Delivery website was based on the following Figma file:
+The design for the Coffee Delivery website was based on the following Figma file:<br>
 https://www.figma.com/design/5yT9ZzZmRQRS4yivGGB3pl/Coffee-Delivery-%E2%80%A2-Desafio-React/duplicate
 
 ## Challenge Information
 
 This project was built to fulfill the challenge of the ReactJS course from RocketSeat.
-Instructions can be found here:
+Instructions can be found here:<br>
 https://efficient-sloth-d85.notion.site/Desafio-02-Coffee-Delivery-30e42a21fdb44b09a85244fc2c3dbdf9
 
