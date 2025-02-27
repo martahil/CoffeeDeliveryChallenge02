@@ -34,5 +34,5 @@ https://www.figma.com/design/5yT9ZzZmRQRS4yivGGB3pl/Coffee-Delivery-%E2%80%A2-De
 
 This project was built to fulfill the challenge of the ReactJS course from RocketSeat.
 Instructions can be found here:
-https://chatgpt.com/c/67c0d2b4-cf80-8010-b7ac-3185ddccf6a6
+https://efficient-sloth-d85.notion.site/Desafio-02-Coffee-Delivery-30e42a21fdb44b09a85244fc2c3dbdf9
 
