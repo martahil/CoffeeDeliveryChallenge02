@@ -13,6 +13,7 @@ export const CheckoutContainer = styled.div`
 
 export const LeftSide = styled.div`
  max-width: 60%;
+ min-width: 30rem;
 `
 
 export const LeftSideHeader = styled.div`
@@ -233,6 +234,7 @@ export const MoneyIcon = styled(Money)`
 
 export const RightSide = styled.div`
   max-width: 40%;
+  min-width: 20rem;
 `
 
 export const RightSideContent = styled.div`

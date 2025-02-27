@@ -163,6 +163,7 @@ export const PaymentOption = styled.span`
 export const RightSide = styled.div`
   width: 30.75rem;
   height: 18.3125rem;
+  margin-left: 6.375rem;
 `
 
 
