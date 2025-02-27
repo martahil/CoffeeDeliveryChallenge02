@@ -146,4 +146,12 @@ export const CartWrapper = styled.button`
   border: none;
   margin-left: 0.5rem;
   cursor: pointer;
+
+  &:hover {
+    background: ${props => props.theme.colors['purple']};
+  }
+
+  &:active {
+    background: ${props => props.theme.colors['yellow-dark']};
+  }
 `

@@ -324,6 +324,10 @@ export const RemoveButton = styled.button`
   border-radius: 6px;
   cursor: pointer;
   border: none;  
+
+  &:hover {
+    background: ${props => props.theme.colors['base-hover']};
+  }
 `
 
 export const TrashIcon = styled(Trash)`
