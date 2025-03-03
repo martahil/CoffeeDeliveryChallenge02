@@ -7,7 +7,7 @@ import { useCart } from "../../../src/contexts/CartContext";
 import { AddressForm, AddressSubtitle, AddressTitle, AddressContainer, CashBtn, CheckoutContainer, CreditCardBtn, DebitCardBtn, LeftSide, LeftSideHeader, PaymentContainer, PaymentContainerSubtitle, PaymentContainerTitle, PaymentOptions, FirstInputLine, SecondInputLine, ThirdInputLine, FourthInputLine, MapPinIcon, AddressContainerHeader, PaymentTitleAndSubtitle, PaymentContainerHeader, AddressTitleAndSubtitle, DollarIcon, CreditCardIcon, BankIcon, MoneyIcon, OptionalSpan, AddressLine2Container, AddressLine2Input, AddressLine2Span, AddressLine2Placeholder, RightSide, RightSideHeader, RemoveButton, CoffeeImage, Subtotal, Shipping, Total, CheckoutBtn, Name, TrashIcon, Price, PriceNumber, TotalContainer, QuantSelAndRemoveBtn, CartItems, NameAndButtons, RightSideContent, GrayLine, EmptyCartMessage, EmptyCartSecondP, EmptyCartFirstP } from "./styles";
 import { QuantitySelector, MinusButton, PlusButton } from "../CoffeesMainPage/CoffeeItem/styles";
 
-export function Checkout() {  
+export function Checkout() {
   const { address, updateAddress } = useCheckout();
   const { cart, removeFromCart, updateQuantity } = useCart();
 

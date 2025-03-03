@@ -59,7 +59,7 @@ export function CartProvider({ children }: { children: ReactNode }) {
   }
 
   function clearCart() {
-    setCart([]); 
+    setCart([]);
   }
 
   return (

@@ -42,7 +42,7 @@ export function OrderConfirmed() {
 
             <DeliverySection>
               <TimerWrapper>
-                <TimerIcon size={16} weight="fill"/>
+                <TimerIcon size={16} weight="fill" />
               </TimerWrapper>
               <DeliveryContent>
                 <DeliveryEstimateTxt>Delivery Estimate</DeliveryEstimateTxt>

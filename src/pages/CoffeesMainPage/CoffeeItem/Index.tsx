@@ -24,7 +24,7 @@ export function CoffeeItem({
   name,
   description,
   price,
-  }: CoffeeItemProps) {
+}: CoffeeItemProps) {
   const isHawaiian = name === "Hawaiian";
 
   const [quantity, setQuantity] = useState(1);

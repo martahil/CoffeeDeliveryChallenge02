@@ -167,7 +167,7 @@ export function CoffeeList() {
       <CoffeeSelector>
         {coffeeList.map(coffee => (
           <CoffeeItem key={coffee.id} {...coffee} />
-        ))}        
+        ))}
       </CoffeeSelector>
     </CoffeesContainer>
   )

@@ -40,7 +40,7 @@ export const ShoppingCartIcon = styled(ShoppingCart)`
 
 export const CartWrapper = styled.button.withConfig({
   shouldForwardProp: (prop) => prop !== 'isDisabled',
-})<CartWrapperProps>`
+}) <CartWrapperProps>`
   display: inline-flex; 
   align-items: center;
   justify-content: center;

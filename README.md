@@ -1,5 +1,7 @@
 # Coffee Delivery Website
 
+##### React + TypeScript + Vite
+
 This is a coffee delivery website built with React and TypeScript. The website allows users to place coffee orders in a simple and fast way, providing a smooth shopping experience.
 
 ![My Project Screenshot](/src/assets/website-screenshot.png)
