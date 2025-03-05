@@ -2,7 +2,7 @@ import { useNavigate } from 'react-router-dom';
 
 import { useCart } from '../../contexts/CartContext'
 
-import { LeftLogo, LogoHeaderContainer, Location, City, ShoppingCartIcon, CartWrapper, CartCounter } from './styles'
+import { LeftLogo, LogoHeaderContainer, Location, City, ShoppingCartIcon, CartWrapper, CartCounter, LogoHeaderContent } from './styles'
 import logo from '../../assets/logo.svg'
 import { MapPin } from 'phosphor-react'
 
@@ -29,23 +29,24 @@ export function LogoHeader({ isFixed = false }: LogoHeaderProps) {
 
   return (
     <LogoHeaderContainer style={{ position: isFixed ? 'fixed' : 'static', top: 0, width: '100%', zIndex: 1000 }}>
-      <LeftLogo onClick={handleMainPageLogoBtn}>
-        <img src={logo} alt="Logo" />
-      </LeftLogo>
+      <LogoHeaderContent>
+        <LeftLogo onClick={handleMainPageLogoBtn}>
+          <img src={logo} alt="Logo" />
+        </LeftLogo>
 
-      <Location>
-        <City>
-          <MapPin size={22} weight="fill" />
-          <h1>New York, NY</h1>
-        </City>
-        <CartWrapper onClick={handleCart} isDisabled={isCartEmpty || isOrderConfirmedPage}>
-          <ShoppingCartIcon size={22} weight="fill" />
-        </CartWrapper>
-        <CartCounter>
-          <h1>{totalItems}</h1>
-        </CartCounter>
-      </Location>
-
+        <Location>
+          <City>
+            <MapPin size={22} weight="fill" />
+            <h1>New York, NY</h1>
+          </City>
+          <CartWrapper onClick={handleCart} isDisabled={isCartEmpty || isOrderConfirmedPage}>
+            <ShoppingCartIcon size={22} weight="fill" />
+          </CartWrapper>
+          <CartCounter>
+            <h1>{totalItems}</h1>
+          </CartCounter>
+        </Location>
+      </LogoHeaderContent>
     </LogoHeaderContainer>
   )
 }

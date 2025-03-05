@@ -2,16 +2,20 @@ import { CurrencyDollar, MapPin, Timer } from 'phosphor-react'
 import styled from 'styled-components'
 
 export const OrderConfirmedContainer = styled.div`
-  white-space: nowrap;
-  display: flex;
-  justify-content: space-between; 
-  align-items: flex-end;  
   font-family: 'Roboto', sans-serif;
   color: ${props => props.theme.colors['base-text']};
   margin-bottom: 5rem;
   margin-top: 5rem;
-  margin-left: 10rem;
-  margin-right: 10rem;
+`
+
+export const OrderConfirmedContent = styled.div`
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  width: 100%;
+  max-width: 72.5rem;
+  margin: 0 auto;  
+  white-space: nowrap;
 `
 
 export const LeftSide = styled.div`

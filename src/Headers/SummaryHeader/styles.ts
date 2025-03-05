@@ -3,29 +3,30 @@ import { Coffee, Package, ShoppingCart, Timer } from 'phosphor-react'
 import backgroundImage from '../../assets/summary-header-background.svg';
 
 export const SummaryHeaderContainer = styled.main` 
-  display: flex;
-  grid-template-columns: 1fr 1fr;  
-  justify-content: space-between;
-  gap: 3.5rem; 
-  padding-bottom: 6.75rem;
-  
   background-image: url(${backgroundImage});
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat; 
+`
+
+export const SummaryHeaderContent = styled.div` 
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
   width: 100%;
-  height: 100%;
+  max-width: 72.5rem;
+  margin: 0 auto;
+  gap: 3.5rem; 
+  padding-bottom: 6.75rem;
 `
 
 export const HighlightsSection = styled.div`
   margin-top: 5.875rem;
-  margin-left: 10rem;
 `
 
 export const CoffeeImg = styled.div`
   width: 29.75rem;
   height: 22.5rem;
-  margin-right: 10rem;
   margin-top: 5.75rem;
   margin-bottom : 5.75rem;
   padding-top: 5.75rem;

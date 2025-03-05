@@ -1,4 +1,4 @@
-import { CoffeesContainer, CoffeeSelector } from "./styles";
+import { CoffeesContainer, CoffeesContent, CoffeeSelector } from "./styles";
 import { CoffeeItem } from '../CoffeeItem/Index'
 
 import traditionalEspresso from '../../../assets/coffee-images/traditional-espresso.svg'

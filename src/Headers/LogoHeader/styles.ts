@@ -7,11 +7,19 @@ interface CartWrapperProps {
 import { ShoppingCart } from 'phosphor-react'
 
 export const LogoHeaderContainer = styled.main`  
-  display: grid;
-  grid-template-columns: 1fr auto;
-  padding: 2rem 10rem 2rem 10rem;  
-  gap: 1rem;
   background: ${props => props.theme.colors['background']};
+`
+
+export const LogoHeaderContent = styled.div`  
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+  gap: 1rem;
+  width: 100%;
+  max-width: 72.5rem;
+  margin: 0 auto;
 `
 
 export const LeftLogo = styled.button`  

@@ -37,9 +37,9 @@ export const Name = styled.div`
   font-family: 'Baloo 2';
   font-size: 1.25rem;
   color: ${props => props.theme.colors['base-subtitle']};
-  margin-top: 1rem;
-  margin-left: 1.25rem;
-  margin-right: 1.25rem;
+  padding-top: 1rem;
+  padding-left: 1.25rem;
+  padding-right: 1.25rem;
 `
 
 export const Description = styled.div`
@@ -48,19 +48,19 @@ export const Description = styled.div`
   font-weight: 400; /* Regular */
   color: ${props => props.theme.colors['base-label']};
   text-align: center;
-  margin-top: 0.5rem;
-  margin-left: 1.25rem;
-  margin-right: 1.25rem;
+  padding-top: 0.5rem;
+  padding-left: 1.25rem;
+  padding-right: 1.25rem;
 
 `
 
 export const PriceAndQuantity = styled.div`
   display: flex;
   align-items: center;
-  margin-top: 2.0625rem;
-  margin-bottom: 1.25rem;
-  margin-left: 1.5rem;
-  margin-right: 1.5rem;
+  padding-top: 2.0625rem;
+  padding-bottom: 1.25rem;
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
 `
 
 export const Price = styled.div`

@@ -4,7 +4,7 @@ import { useLocation } from 'react-router-dom';
 import { useCheckout } from '../../contexts/ClientDataContext';
 import { useCart } from '../../contexts/CartContext';
 
-import { AddressContent, AddressSection, CityAndStateLine, DeliveryContent, DeliveryEstimateTime, DeliveryEstimateTxt, DeliverySection, DeliveryToTxt, DollarIcon, DollarWrapper, LeftSide, MapPinIcon, MapPinWrapper, OrderConfirmedContainer, OrderMainInfo, OrderMainInfoContainer, PaymentContent, PaymentOnDeliveryTxt, PaymentOption, PaymentSection, RightSide, Street, StreetAddressLine, Subtitle, TimerIcon, TimerWrapper, Title } from "./styles";
+import { AddressContent, AddressSection, CityAndStateLine, DeliveryContent, DeliveryEstimateTime, DeliveryEstimateTxt, DeliverySection, DeliveryToTxt, DollarIcon, DollarWrapper, LeftSide, MapPinIcon, MapPinWrapper, OrderConfirmedContainer, OrderConfirmedContent, OrderMainInfo, OrderMainInfoContainer, PaymentContent, PaymentOnDeliveryTxt, PaymentOption, PaymentSection, RightSide, Street, StreetAddressLine, Subtitle, TimerIcon, TimerWrapper, Title } from "./styles";
 import orderConfirmedImg from '../../assets/order-confirmed-illustration.svg'
 
 export function OrderConfirmed() {
@@ -21,51 +21,53 @@ export function OrderConfirmed() {
 
   return (
     <OrderConfirmedContainer>
-      <LeftSide>
-        <Title>Woohoo! Order confirmed</Title>
-        <Subtitle>Now just wait, and your coffee will soon arrive to you</Subtitle>
+      <OrderConfirmedContent>
+        <LeftSide>
+          <Title>Woohoo! Order confirmed</Title>
+          <Subtitle>Now just wait, and your coffee will soon arrive to you</Subtitle>
 
-        <OrderMainInfoContainer> {/* This extra container was created to make the border gradient color possible */}
-          <OrderMainInfo>
-            <AddressSection>
-              <MapPinWrapper>
-                <MapPinIcon size={16} weight="fill" />
-              </MapPinWrapper>
-              <AddressContent>
-                <StreetAddressLine>
-                  <DeliveryToTxt>Delivery to&nbsp;</DeliveryToTxt>
-                  <Street>{address.streetAddress}, {address.houseNumber}, {address.addressLine2}</Street>
-                </StreetAddressLine>
-                <CityAndStateLine>{address.neighborhood}, {address.city}, {address.state}, {address.zipCode}</CityAndStateLine>
-              </AddressContent>
-            </AddressSection>
+          <OrderMainInfoContainer> {/* This extra container was created to make the border gradient color possible */}
+            <OrderMainInfo>
+              <AddressSection>
+                <MapPinWrapper>
+                  <MapPinIcon size={16} weight="fill" />
+                </MapPinWrapper>
+                <AddressContent>
+                  <StreetAddressLine>
+                    <DeliveryToTxt>Delivery to&nbsp;</DeliveryToTxt>
+                    <Street>{address.streetAddress}, {address.houseNumber}, {address.addressLine2}</Street>
+                  </StreetAddressLine>
+                  <CityAndStateLine>{address.neighborhood}, {address.city}, {address.state}, {address.zipCode}</CityAndStateLine>
+                </AddressContent>
+              </AddressSection>
 
-            <DeliverySection>
-              <TimerWrapper>
-                <TimerIcon size={16} weight="fill" />
-              </TimerWrapper>
-              <DeliveryContent>
-                <DeliveryEstimateTxt>Delivery Estimate</DeliveryEstimateTxt>
-                <DeliveryEstimateTime>20 min - 30 min</DeliveryEstimateTime>
-              </DeliveryContent>
-            </DeliverySection>
+              <DeliverySection>
+                <TimerWrapper>
+                  <TimerIcon size={16} weight="fill" />
+                </TimerWrapper>
+                <DeliveryContent>
+                  <DeliveryEstimateTxt>Delivery Estimate</DeliveryEstimateTxt>
+                  <DeliveryEstimateTime>20 min - 30 min</DeliveryEstimateTime>
+                </DeliveryContent>
+              </DeliverySection>
 
-            <PaymentSection>
-              <DollarWrapper>
-                <DollarIcon size={16} weight="fill" />
-              </DollarWrapper>
-              <PaymentContent>
-                <PaymentOnDeliveryTxt>Payment on delivery</PaymentOnDeliveryTxt>
-                <PaymentOption>{paymentMethod}</PaymentOption>
-              </PaymentContent>
-            </PaymentSection>
-          </OrderMainInfo>
-        </OrderMainInfoContainer>
-      </LeftSide>
+              <PaymentSection>
+                <DollarWrapper>
+                  <DollarIcon size={16} weight="fill" />
+                </DollarWrapper>
+                <PaymentContent>
+                  <PaymentOnDeliveryTxt>Payment on delivery</PaymentOnDeliveryTxt>
+                  <PaymentOption>{paymentMethod}</PaymentOption>
+                </PaymentContent>
+              </PaymentSection>
+            </OrderMainInfo>
+          </OrderMainInfoContainer>
+        </LeftSide>
 
-      <RightSide>
-        <img src={orderConfirmedImg} alt="Illustration of a delivery person on a motorcycle" />
-      </RightSide>
+        <RightSide>
+          <img src={orderConfirmedImg} alt="Illustration of a delivery person on a motorcycle" />
+        </RightSide>
+      </OrderConfirmedContent>
     </OrderConfirmedContainer >
   )
 }

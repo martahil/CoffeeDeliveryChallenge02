@@ -2,13 +2,17 @@ import { Bank, CreditCard, CurrencyDollar, MapPinLine, Money, Trash } from 'phos
 import styled from 'styled-components'
 
 export const CheckoutContainer = styled.div`
-  margin-left: 10rem;
-  margin-bottom: 15rem;
-  margin-top: 2.5rem;
-  margin-right: 10rem;
+`
+
+export const CheckoutContent = styled.div`
   display: flex;
   gap: 2rem;
-  justify-content: space-between;
+  justify-content: space-between; 
+  margin-bottom: 15rem;
+  padding-top: 2.5rem;
+  width: 100%;
+  max-width: 72.5rem;
+  margin: 0 auto;  
 `
 
 export const LeftSide = styled.div`
